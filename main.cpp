@@ -2,11 +2,11 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QDebug>
-#include "connexion.h"
+#include "connexion_base.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Connexion c;
+    connexion_base c;
     bool test=c.ouvrirConnexion();
     MainWindow w;
          if(test)
@@ -25,3 +25,4 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+
