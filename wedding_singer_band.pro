@@ -16,19 +16,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    boudinar.cpp \
+    bandM.cpp \
     connexion_base.cpp \
-    drake.cpp \
     main.cpp \
     mainwindow.cpp \
+    singerM.cpp \
     the_band.cpp \
     zingeeer.cpp
 
 HEADERS += \
-    boudinar.h \
+    bandM.h \
     connexion_base.h \
-    drake.h \
     mainwindow.h \
+    singerM.h \
     the_band.h \
     zingeeer.h
 

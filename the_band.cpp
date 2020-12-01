@@ -1,6 +1,6 @@
 #include "the_band.h"
 #include "ui_the_band.h"
-#include"boudinar.h"
+#include"bandM.h"
 #include <QMessageBox>
 #include <QIntValidator>
 
@@ -10,6 +10,13 @@ the_band::the_band(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->table_band->setModel(tmpboudinar.afficher());
+
+    ui->lineEdit_ID1->setValidator(new QIntValidator(0,999999,this));
+    ui->LineEdit_key1->setValidator(new QIntValidator(0,999999,this));
+    ui->lineEdit_ID10->setValidator(new QIntValidator(0,999999,this));
+
+
+
 
 }
 
@@ -108,3 +115,99 @@ void the_band::on_pushButton_4_clicked()
 
 }
 
+
+void the_band::on_pushButton_5_clicked()
+
+    {
+        bool test = true;
+              if (test)
+                  {
+                  ui->table_band->setModel(tmpboudinar.afficher());
+
+                      ui->table_band->setModel(tmpboudinar.trierID());
+
+
+
+                  }
+
+              else
+              {
+                  QMessageBox::critical(nullptr, QObject::tr("trier client"),
+                                        QObject::tr("Erreur !.\n"
+                                                    "Click Cancel to exit."), QMessageBox::Cancel);
+              }
+
+        }
+
+
+
+void the_band::on_pushButton_6_clicked()
+{
+    bool test = true;
+          if (test)
+              {
+              ui->table_band->setModel(tmpboudinar.afficher());
+
+                  ui->table_band->setModel(tmpboudinar.trierprix());
+
+
+
+              }
+
+          else
+          {
+              QMessageBox::critical(nullptr, QObject::tr("trier client"),
+                                    QObject::tr("Erreur !.\n"
+                                                "Click Cancel to exit."), QMessageBox::Cancel);
+          }
+
+    }
+
+void the_band::on_pushButton_7_clicked()
+{
+    bool test = true;
+          if (test)
+              {
+              ui->table_band->setModel(tmpboudinar.afficher());
+
+                  ui->table_band->setModel(tmpboudinar.trieradresse());
+
+
+
+              }
+
+          else
+          {
+              QMessageBox::critical(nullptr, QObject::tr("trier client"),
+                                    QObject::tr("Erreur !.\n"
+                                                "Click Cancel to exit."), QMessageBox::Cancel);
+          }
+
+    }
+
+
+
+
+
+void the_band::on_pushButton_8_clicked()
+{
+    ui->table_band->setModel(tmpboudinar.afficher());
+            QString adresse = ui->lineEdit_search->text();
+           ui->table_band->setModel(tmpboudinar.chercher(adresse));
+}
+
+
+
+void the_band::on_pushButton_9_clicked()
+{
+    ui->table_band->setModel(tmpboudinar.afficher());
+            QString nom = ui->lineEdit_seach1->text();
+           ui->table_band->setModel(tmpboudinar.cherchernom(nom));
+}
+
+void the_band::on_pushButton_10_clicked()
+{
+    ui->table_band->setModel(tmpboudinar.afficher());
+            QString type_music = ui->lineEdit_search2->text();
+           ui->table_band->setModel(tmpboudinar.cherchermusic(type_music));
+}

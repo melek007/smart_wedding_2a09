@@ -24,6 +24,15 @@ public:
           QSqlQueryModel * afficher();
           bool supprimer(int);
           bool modifier();
+          QSqlQueryModel * trierID();
+            QSqlQueryModel * trierprix();
+            QSqlQueryModel * trieradresse();
+            QSqlQueryModel * chercher(QString);
+            QSqlQueryModel * cherchernom(QString);
+            QSqlQueryModel * cherchermusic(QString);
+
+
+
 
 
     private:

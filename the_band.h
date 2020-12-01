@@ -1,6 +1,6 @@
 #ifndef THE_BAND_H
 #define THE_BAND_H
-#include"boudinar.h"
+#include"bandM.h"
 #include <QDialog>
 
 namespace Ui {
@@ -21,6 +21,18 @@ private slots:
     void on_pushButton_3_clicked();
 
     void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
 
 private:
     Ui::the_band *ui;
