@@ -4,7 +4,10 @@
 #include <QMessageBox>
 #include <QIntValidator>
 #include <QtPrintSupport/QAbstractPrintDialog>
-
+#include <QPrinter>
+#include "QPainter"
+#include <QPrintDialog>
+#include <QMediaPlayer>
 zingeeer::zingeeer(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::zingeeer)
@@ -23,7 +26,9 @@ zingeeer::~zingeeer()
 
 
 void zingeeer::on_pushButton_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     int id=ui->lineEdit_ID->text().toInt();
         QString nom=ui->lineEdit_nom->text();
         QString prenom=ui->lineEdit_prenom->text();
@@ -62,7 +67,9 @@ void zingeeer::on_pushButton_clicked()
 
 
 void zingeeer::on_pushButton_3_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
 
     drake E1;
     E1.setID(ui->LineEdit_key->text().toInt());
@@ -82,7 +89,10 @@ void zingeeer::on_pushButton_3_clicked()
 
 
 void zingeeer::on_pushButton_4_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
+
         int ID=ui->LineEdit_10->text().toInt();
         QString nom=ui->LineEdit_11->text();
           QString prenom=ui->LineEdit_12->text();
@@ -113,7 +123,9 @@ void zingeeer::on_pushButton_4_clicked()
 
 void zingeeer::on_pushButton_5_clicked()
 
-    {
+    {QMediaPlayer * music =new QMediaPlayer;
+     music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+     music->play();
         bool test = true;
               if (test)
                   {
@@ -137,7 +149,9 @@ void zingeeer::on_pushButton_5_clicked()
 
 void zingeeer::on_pushButton_6_clicked()
 
-    {
+    {QMediaPlayer * music =new QMediaPlayer;
+     music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+     music->play();
         bool test = true;
               if (test)
                   {
@@ -160,7 +174,9 @@ void zingeeer::on_pushButton_6_clicked()
 
 
 void zingeeer::on_pushButton_7_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     {
         bool test = true;
               if (test)
@@ -186,21 +202,27 @@ void zingeeer::on_pushButton_7_clicked()
 }
 
 void zingeeer::on_pushButton_8_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     ui->table_chant->setModel(tmpdrake.afficher());
             QString nom = ui->lineEdit_searchname->text();
            ui->table_chant->setModel(tmpdrake.cherchernom(nom));
 }
 
 void zingeeer::on_pushButton_9_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     ui->table_chant->setModel(tmpdrake.afficher());
 QString typechant= ui->lineEdit_searchmusic->text();
 ui->table_chant->setModel(tmpdrake.chercher(typechant));
 }
 
 void zingeeer::on_pushButton_10_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     ui->table_chant->setModel(tmpdrake.afficher());
             int prix=ui->lineEdit_searchprice->text().toInt();
            ui->table_chant->setModel(tmpdrake.chercherprix(prix));
@@ -208,3 +230,15 @@ void zingeeer::on_pushButton_10_clicked()
 
 
 
+
+void zingeeer::on_pushButton_11_clicked()
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
+    QPrinter printer;
+            QPainter painter;
+            printer.setPrinterName("liste");
+            QPrintDialog dialog(&printer,this);
+            if(dialog.exec()==QDialog::Rejected)return;
+            ui->table_chant->render(&printer);
+}

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sounds/wave.mp3</file>
+        <file>../programmation/wedd/12.png</file>
+    </qresource>
+</RCC>

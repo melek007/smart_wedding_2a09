@@ -2,12 +2,17 @@
 #include "ui_mainwindow.h"
 #include"zingeeer.h"
 #include"the_band.h"
+#include <QPixmap>
+#include <QPixelFormat>
+#include <qpixmap.h>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 
 }
 

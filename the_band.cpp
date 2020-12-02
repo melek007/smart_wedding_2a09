@@ -3,6 +3,11 @@
 #include"bandM.h"
 #include <QMessageBox>
 #include <QIntValidator>
+#include <QtPrintSupport/QAbstractPrintDialog>
+#include <QPrinter>
+#include "QPainter"
+#include <QPrintDialog>
+#include <QMediaPlayer>
 
 the_band::the_band(QWidget *parent) :
     QDialog(parent),
@@ -27,7 +32,9 @@ the_band::~the_band()
 
 void the_band::on_pushButton_2_clicked()
 {
-
+    QMediaPlayer * music =new QMediaPlayer;
+     music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+     music->play();
         int id=ui->lineEdit_ID1->text().toInt();
             QString nom=ui->lineEdit_nom1->text();
             QString adresse=ui->lineEdit_adresse->text();
@@ -67,6 +74,9 @@ void the_band::on_pushButton_2_clicked()
 
 void the_band::on_pushButton_3_clicked()
 {
+    QMediaPlayer * music =new QMediaPlayer;
+     music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+     music->play();
     boudinar s;
     s.setID(ui->LineEdit_key1->text().toInt());
     bool test=s.supprimer(s.getID());
@@ -83,7 +93,9 @@ void the_band::on_pushButton_3_clicked()
 }
 
 void the_band::on_pushButton_4_clicked()
-{
+{  QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
 
             int ID=ui->lineEdit_ID10->text().toInt();
             QString nom=ui->lineEdit_nom10->text();
@@ -118,7 +130,9 @@ void the_band::on_pushButton_4_clicked()
 
 void the_band::on_pushButton_5_clicked()
 
-    {
+    {  QMediaPlayer * music =new QMediaPlayer;
+       music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+       music->play();
         bool test = true;
               if (test)
                   {
@@ -142,7 +156,9 @@ void the_band::on_pushButton_5_clicked()
 
 
 void the_band::on_pushButton_6_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     bool test = true;
           if (test)
               {
@@ -164,7 +180,9 @@ void the_band::on_pushButton_6_clicked()
     }
 
 void the_band::on_pushButton_7_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     bool test = true;
           if (test)
               {
@@ -190,7 +208,9 @@ void the_band::on_pushButton_7_clicked()
 
 
 void the_band::on_pushButton_8_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     ui->table_band->setModel(tmpboudinar.afficher());
             QString adresse = ui->lineEdit_search->text();
            ui->table_band->setModel(tmpboudinar.chercher(adresse));
@@ -199,15 +219,31 @@ void the_band::on_pushButton_8_clicked()
 
 
 void the_band::on_pushButton_9_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     ui->table_band->setModel(tmpboudinar.afficher());
             QString nom = ui->lineEdit_seach1->text();
            ui->table_band->setModel(tmpboudinar.cherchernom(nom));
 }
 
 void the_band::on_pushButton_10_clicked()
-{
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
     ui->table_band->setModel(tmpboudinar.afficher());
             QString type_music = ui->lineEdit_search2->text();
            ui->table_band->setModel(tmpboudinar.cherchermusic(type_music));
+}
+
+void the_band::on_pushButton_11_clicked()
+{QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
+    QPrinter printer;
+            QPainter painter;
+            printer.setPrinterName("liste");
+            QPrintDialog dialog(&printer,this);
+            if(dialog.exec()==QDialog::Rejected)return;
+            ui->table_band->render(&printer);
 }
