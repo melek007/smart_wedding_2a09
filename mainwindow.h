@@ -1,6 +1,5 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -16,13 +15,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_admin_manager_clicked();
 
-    void on_pushButton_clicked();
+    void on_vip_wedding_manager_clicked();
 
 private:
     Ui::MainWindow *ui;
 
 };
 #endif // MAINWINDOW_H
-

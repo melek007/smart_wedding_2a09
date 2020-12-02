@@ -1,63 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>818</width>
-    <height>524</height>
+    <width>774</width>
+    <height>582</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>MainWindow</string>
   </property>
-  <widget class="QGroupBox" name="groupBox">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>10</y>
-     <width>691</width>
-     <height>491</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>manage band and singer</string>
-   </property>
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
-   <widget class="QPushButton" name="pushButton">
+  <property name="styleSheet">
+   <string notr="true">QLineEdit { background: yellow }
+QCheckBox { color: red }
+QMainWindow {color:cyan}</string>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="admin_manager">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>110</y>
-      <width>281</width>
+      <x>240</x>
+      <y>130</y>
+      <width>231</width>
       <height>91</height>
      </rect>
     </property>
-    <property name="focusPolicy">
-     <enum>Qt::StrongFocus</enum>
-    </property>
     <property name="text">
-     <string>manage voiture</string>
+     <string>admin manager</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../download.png</normaloff>../download.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>86</width>
+      <height>86</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="vip_wedding_manager">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>290</y>
-      <width>281</width>
+      <x>240</x>
+      <y>330</y>
+      <width>231</width>
       <height>91</height>
      </rect>
     </property>
     <property name="text">
-     <string>manage singer</string>
+     <string>VIP wedding manager</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../WD20190808-YachtStarship-06.jpg</normaloff>../WD20190808-YachtStarship-06.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>86</width>
+      <height>86</height>
+     </size>
     </property>
    </widget>
   </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>774</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

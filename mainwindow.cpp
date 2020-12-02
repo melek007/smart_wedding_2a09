@@ -1,7 +1,12 @@
 #include "mainwindow.h"
+#include "admin_configurationW.h"
+#include "ui_admin_configurationW.h"
+#include "vip_weddingW.h"
+#include "ui_vip_weddingW.h"
+#include "vip_weddingM.h"
 #include "ui_mainwindow.h"
-#include"voiture.h"
-#include"honeymonn.h"
+#include <QMessageBox>
+#include <QIntValidator>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,17 +22,17 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_2_clicked()
-{ voiture z;
+void MainWindow::on_admin_manager_clicked()
+{ admin_configuration z;
     z.show();
     z.exec();
 }
 
 
-void MainWindow::on_pushButton_clicked()
-{ the_band b;
+void MainWindow::on_vip_wedding_manager_clicked()
+{ vip_wedding b;
     b.show();
-    b.exec();
+
 
 
 }
