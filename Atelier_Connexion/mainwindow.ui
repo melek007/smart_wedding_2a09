@@ -31,7 +31,7 @@ color: rgb(192, 137, 255);</string>
      <enum>QTabWidget::North</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Espace_Traiteur">
      <attribute name="title">
@@ -41,9 +41,9 @@ color: rgb(192, 137, 255);</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>10</y>
+        <y>0</y>
         <width>731</width>
-        <height>311</height>
+        <height>381</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -178,8 +178,31 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Quitter</string>
@@ -189,17 +212,59 @@ color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>260</x>
-          <y>120</y>
+          <y>40</y>
           <width>71</width>
           <height>23</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QFrame" name="heart">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>0</y>
+          <width>51</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">image: url(:/heart.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
        </widget>
       </widget>
@@ -234,8 +299,31 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(255, 85, 127);
-font: italic 8pt &quot;MS Sans Serif&quot;;</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="title">
          <string>Affichage</string>
@@ -253,8 +341,8 @@ font: italic 8pt &quot;MS Sans Serif&quot;;</string>
         <widget class="QLineEdit" name="lineEdit">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>140</y>
+           <x>10</x>
+           <y>80</y>
            <width>113</width>
            <height>20</height>
           </rect>
@@ -264,8 +352,8 @@ font: italic 8pt &quot;MS Sans Serif&quot;;</string>
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>180</y>
-           <width>75</width>
+           <y>110</y>
+           <width>81</width>
            <height>23</height>
           </rect>
          </property>
@@ -277,28 +365,11 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
           <string>Rechercher</string>
          </property>
         </widget>
-        <widget class="QRadioButton" name="radioButton">
-         <property name="geometry">
-          <rect>
-           <x>30</x>
-           <y>50</y>
-           <width>82</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>ID</string>
-         </property>
-        </widget>
         <widget class="QPushButton" name="pushButton_5">
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>220</y>
+           <y>140</y>
            <width>81</width>
            <height>23</height>
           </rect>
@@ -307,7 +378,58 @@ color: rgb(0, 0, 0);</string>
           <string notr="true">color: rgb(9, 9, 9);</string>
          </property>
          <property name="text">
-          <string>trier par nom</string>
+          <string>TRIER</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox">
+         <property name="geometry">
+          <rect>
+           <x>21</x>
+           <y>50</y>
+           <width>71</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>id_tr</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>nom_tr</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>adresse_tr</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QPushButton" name="imp_tr">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>200</y>
+           <width>81</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>imprimer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pdf_tr">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>230</y>
+           <width>81</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>PDF</string>
          </property>
         </widget>
        </widget>
@@ -356,28 +478,34 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Supprimer</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="Annuler_Supprimersalle">
-        <property name="geometry">
-         <rect>
-          <x>270</x>
-          <y>40</y>
-          <width>71</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>Annuler</string>
         </property>
        </widget>
       </widget>
@@ -485,28 +613,34 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Modifier</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="Annuler_Modifiersalle">
-        <property name="geometry">
-         <rect>
-          <x>440</x>
-          <y>190</y>
-          <width>71</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>Annuler</string>
         </property>
        </widget>
        <widget class="QGroupBox" name="groupBox">
@@ -553,23 +687,6 @@ color: rgb(0, 0, 0);</string>
          </property>
          <property name="text">
           <string/>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Modifier_Modifiersalle_2">
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>60</y>
-           <width>71</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>Consulter</string>
          </property>
         </widget>
        </widget>
@@ -730,8 +847,31 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Quitter</string>
@@ -747,8 +887,31 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Ajouter</string>
@@ -792,10 +955,10 @@ color: rgb(0, 0, 0);</string>
        <widget class="QGroupBox" name="groupBox_3">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>0</y>
+          <x>0</x>
+          <y>20</y>
           <width>621</width>
-          <height>251</height>
+          <height>271</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -818,8 +981,8 @@ font: italic 8pt &quot;MS Sans Serif&quot;;</string>
         <widget class="QLineEdit" name="lineEdit_2">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>140</y>
+           <x>10</x>
+           <y>70</y>
            <width>113</width>
            <height>20</height>
           </rect>
@@ -829,50 +992,185 @@ font: italic 8pt &quot;MS Sans Serif&quot;;</string>
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>180</y>
-           <width>75</width>
+           <y>110</y>
+           <width>81</width>
            <height>23</height>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(0, 0, 0);
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
          </property>
          <property name="text">
           <string>Rechercher</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_5">
-         <property name="geometry">
-          <rect>
-           <x>30</x>
-           <y>60</y>
-           <width>111</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 9pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>ID Cameraman</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_6">
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>210</y>
+           <y>140</y>
            <width>81</width>
            <height>23</height>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(11, 11, 11);</string>
+          <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
          </property>
          <property name="text">
-          <string>trier par nom</string>
+          <string>TRIER</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_2">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>62</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>id</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>nom</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>adrese</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QPushButton" name="imp_ca">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>200</y>
+           <width>75</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>imprimer</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pdf_ca">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>230</y>
+           <width>75</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
+         </property>
+         <property name="text">
+          <string>PDF</string>
          </property>
         </widget>
        </widget>
@@ -928,23 +1226,6 @@ color: rgb(0, 0, 0);</string>
          <string/>
         </property>
        </widget>
-       <widget class="QPushButton" name="Annuler_Supprimertheme">
-        <property name="geometry">
-         <rect>
-          <x>340</x>
-          <y>70</y>
-          <width>71</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>Annuler</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="pb_supprimertheme">
         <property name="geometry">
          <rect>
@@ -955,8 +1236,31 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Supprimer</string>
@@ -1067,8 +1371,31 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Modifier</string>
@@ -1084,8 +1411,31 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QPushButton
+{
+	background: transparent;
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:rgb(0,0,0);
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
         </property>
         <property name="text">
          <string>Annuler</string>
@@ -1135,23 +1485,6 @@ color: rgb(0, 0, 0);</string>
          </property>
          <property name="text">
           <string/>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Modifier_Modifiersalle_3">
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>60</y>
-           <width>71</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 8pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
-         </property>
-         <property name="text">
-          <string>Consulter</string>
          </property>
         </widget>
        </widget>

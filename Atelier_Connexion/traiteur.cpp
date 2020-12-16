@@ -1,5 +1,10 @@
 #include "traiteur.h"
 #include "mainwindow.h"
+#include <QMessageBox>
+#include <QDebug>
+#include <QSqlQueryModel>
+#include <QObject>
+#include <QSqlQuery>
 
 traiteur::traiteur()
 {
@@ -74,39 +79,36 @@ bool traiteur::modifier(int id_tr,QString nom_tr,QString adresse_tr,int prix_tr)
 
                  return query.exec();
 }
-bool traiteur::rechercher(int id_tr)
+bool traiteur::rechercher(int id_tr,QString nom_tr,QString adresse_tr)
 {
-    bool traiteur::rechercher(int id_tr)
-    {
-        QMessageBox msgBox;
-        QMessageBox msgBox1;
-        QSqlQuery query;
-        bool retour=0;
-        int count=0;
-        query.prepare("SELECT * FROM traiteur WHERE id_tr= ? ");
-        query.addBindValue(id_tr);
-
-        if(query.exec() )
-            {
-    while (query.next())
-       {
-       count ++;
+    QMessageBox msgBox;
+    QMessageBox msgBox1;
+    QSqlQuery query;
+    bool retour=0;
+    int count=0;
+    query.prepare("SELECT * FROM traiteur WHERE id_tr= ? or nom_tr= ? or adresse_tr= ?");
+    query.addBindValue(id_tr);
+    query.addBindValue(nom_tr);
+    query.addBindValue(adresse_tr);
+    if(query.exec() )
+        {
+while (query.next())
+   {
+   count ++;
+    }
+if(count==1)
+   {
+    msgBox.setText("traiteur existe");
+    msgBox.exec();
+    retour=1;
+   }
+else if (count<1)
+{
+    msgBox1.setText("traiteur n'existe pas");
+        msgBox1.exec();
+        retour=0;
+}
         }
-    if(count==1)
-       {
-        msgBox.setText("traiteur existe");
-        msgBox.exec();
-        retour=1;
-       }
-    else if (count<1)
-    {
-        msgBox1.setText("traiteur n'existe pas");
-            msgBox1.exec();
-            retour=0;
-    }
-            }
-        return retour;
-
-    }
+    return retour;
 
 }

@@ -6,6 +6,7 @@
 
 
 
+
 class traiteur
 {
 public:
@@ -25,7 +26,7 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
     bool modifier(int,QString,QString,int);
-    bool rechercher(int);
+    bool rechercher(int id_tr,QString nom_tr,QString adresse_tr);
 
  private:
     int id_tr,prix_tr;

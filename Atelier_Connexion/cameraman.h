@@ -26,6 +26,8 @@ public:
     bool ajoutert();
     bool supprimert(int);
     bool modifiert(int,QString,QString,QString,int);
+    bool recherchert(int id,QString nom,QString adrese);
+
 
 private:
  int id,prix;

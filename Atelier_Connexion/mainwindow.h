@@ -4,9 +4,10 @@
 #include <QMainWindow>
 #include "traiteur.h"
 #include "cameraman.h"
-
+#include <QPropertyAnimation>
 
 namespace Ui {
+QT_END_NAMESPACE
 class MainWindow;
 }
 
@@ -38,10 +39,25 @@ private slots:
 
     void on_pushButton_clicked();
 
+
+
+    void on_pushButton_3_clicked();
+
+
+
+    void on_pdf_tr_clicked();
+
+    void on_imp_tr_clicked();
+
+    void on_imp_ca_clicked();
+
+    void on_pdf_ca_clicked();
+
 private:
     Ui::MainWindow *ui;
     traiteur t;
     cameraman c;
+    QPropertyAnimation *animation;
 };
 
 

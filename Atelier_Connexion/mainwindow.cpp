@@ -2,16 +2,41 @@
 #include "ui_mainwindow.h"
 #include "traiteur.h"
 #include "cameraman.h"
-#include <QDialog>
+#include <iostream>
 #include <QMessageBox>
-#include <QObject>
-#include <QIntValidator>
+#include  <QDebug>
+#include <QRadioButton>
+#include<QtPrintSupport/QPrinter>
+#include<QPdfWriter>
+#include <QPainter>
+#include<QFileDialog>
+#include<QTextDocument>
+#include <QTextEdit>
+#include <QtSql/QSqlQueryModel>
+#include<QtPrintSupport/QPrinter>
+#include <QVector2D>
+#include <QVector>
+#include <QSqlQuery>
+#include<QDesktopServices>
+#include <QMessageBox>
+#include<QUrl>
+#include <QPixmap>
+#include <QTabWidget>
+#include <QValidator>
+#include <QPrintDialog>
+#include<QtSql/QSqlQuery>
+#include<QVariant>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    animation = new QPropertyAnimation(ui->heart, "geometry");
+                animation->setDuration(9000);
+                animation->setStartValue(ui->heart->geometry());
+                animation->setEndValue(QRect(200,450,100,50));
+                animation->start();
 }
 
 MainWindow::~MainWindow()
@@ -177,10 +202,9 @@ void MainWindow::on_pushButton_5_clicked()
     QMessageBox msgBox ;
 
             QSqlQueryModel *model = new QSqlQueryModel();
-                     model->setQuery("SELECT * FROM TRAITEUR order by nom ASC");
+                     model->setQuery("SELECT * FROM TRAITEUR order by id_tr ASC");
                      model->setHeaderData(0, Qt::Horizontal, QObject::tr("id_tr"));
                      model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_tr"));
-                     model->setHeaderData(2, Qt::Horizontal, QObject::tr("theme_tr"));
                      model->setHeaderData(3, Qt::Horizontal, QObject::tr("adresse_tr"));
                      model->setHeaderData(4, Qt::Horizontal, QObject::tr("prix_tr"));
 
@@ -199,11 +223,11 @@ void MainWindow::on_pushButton_6_clicked()
     QMessageBox msgBox ;
 
             QSqlQueryModel *model = new QSqlQueryModel();
-                     model->setQuery("SELECT * FROM TRAITEUR order by nom ASC");
+                     model->setQuery("SELECT * FROM cameraman order by id ASC");
                      model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
                      model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom"));
                      model->setHeaderData(2, Qt::Horizontal, QObject::tr("theme"));
-                     model->setHeaderData(3, Qt::Horizontal, QObject::tr("adresse"));
+                     model->setHeaderData(3, Qt::Horizontal, QObject::tr("adrese"));
                      model->setHeaderData(4, Qt::Horizontal, QObject::tr("prix"));
 
                      ui->tab_theme->setModel(model);
@@ -212,21 +236,202 @@ void MainWindow::on_pushButton_6_clicked()
                      msgBox.exec();
 }
 
-/*void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_pushButton_clicked()
 {
     bool test;
-   traiteur t;
-       int id_tr=0;
-       QString nom=ui->le_nom->text();
-       QString choix=ui->comboBox_12->currentText();
+      traiteur t;
+          int id_tr=0;
+          QString nom_tr=ui->lineEdit->text();
+          QString adresse_tr=ui->lineEdit->text();
+          QString choix=ui->comboBox->currentText();
+      if(choix=="id_tr")
+      {
+          id_tr= nom_tr.toInt();
+          test=t.rechercher(id_tr,nom_tr,adresse_tr);
+      }
+      if(choix=="nom_tr")
+      {
 
-   if(choix=="idm")
+         test=t.rechercher(id_tr,nom_tr,adresse_tr);
+      }
+      if(choix=="adresse_tr")
+      {
+
+          test=t.rechercher(id_tr,nom_tr,adresse_tr);
+      }
+   if(test)
    {
-       idm= type.toInt();
-       test=t.recherche(type,prix,idm);
+   ui->tab_salle->setModel(t.afficher());
    }
-if(test)
-{
-ui->stackedWidget_6->setCurrentIndex(1);
 }
-}*/
+
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    bool test;
+      cameraman c;
+          int id=0;
+          QString nom=ui->lineEdit_2->text();
+          QString adrese=ui->lineEdit_2->text();
+          QString choix=ui->comboBox_2->currentText();
+      if(choix=="id")
+      {
+          id= nom.toInt();
+          test=c.recherchert(id,nom,adrese);
+      }
+      if(choix=="nom")
+      {
+
+         test=c.recherchert(id,nom,adrese);
+      }
+      if(choix=="adrese")
+      {
+
+          test=c.recherchert(id,nom,adrese);
+      }
+   if(test)
+   {
+   ui->tab_theme->setModel(c.affichert());
+   }
+}
+
+
+void MainWindow::on_pdf_tr_clicked()
+{
+    QString strStream;
+                      QTextStream out(&strStream);
+
+                      const int rowCount = ui->tab_salle->model()->rowCount();
+                      const int columnCount = ui->tab_salle->model()->columnCount();
+
+                      out <<  "<html>\n"
+                          "<head>\n"
+                          "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+                          <<  QString("<title>%1</title>\n").arg("strTitle")
+                          <<  "</head>\n"
+                          "<body bgcolor=#ffffff link=#5000A0>\n"
+
+                         //     "<align='right'> " << datefich << "</align>"
+                          "<center> <H1>Liste des commandes </H1></br></br><table border=1 cellspacing=0 cellpadding=2>\n";
+
+                      // headers
+                      out << "<thead><tr bgcolor=#f0f0f0> <th>Numero</th>";
+                      for (int column = 0; column < columnCount; column++)
+                          if (!ui->tab_salle->isColumnHidden(column))
+                              out << QString("<th>%1</th>").arg(ui->tab_salle->model()->headerData(column, Qt::Horizontal).toString());
+                      out << "</tr></thead>\n";
+
+                      // data table
+                      for (int row = 0; row < rowCount; row++) {
+                          out << "<tr> <td bkcolor=0>" << row+1 <<"</td>";
+                          for (int column = 0; column < columnCount; column++) {
+                              if (!ui->tab_salle->isColumnHidden(column)) {
+                                  QString data = ui->tab_salle->model()->data(ui->tab_salle->model()->index(row, column)).toString().simplified();
+                                  out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                              }
+                          }
+                          out << "</tr>\n";
+                      }
+                      out <<  "</table> </center>\n"
+                          "</body>\n"
+                          "</html>\n";
+
+                QString fileName = QFileDialog::getSaveFileName((QWidget* )0, "Sauvegarder en PDF", QString(), "*.pdf");
+                  if (QFileInfo(fileName).suffix().isEmpty()) { fileName.append(".pdf"); }
+
+                 QPrinter printer (QPrinter::PrinterResolution);
+                  printer.setOutputFormat(QPrinter::PdfFormat);
+                 printer.setPaperSize(QPrinter::A4);
+                printer.setOutputFileName(fileName);
+
+                 QTextDocument doc;
+                  doc.setHtml(strStream);
+                  doc.setPageSize(printer.pageRect().size()); // This is necessary if you want to hide the page number
+                  doc.print(&printer);
+}
+
+void MainWindow::on_imp_tr_clicked()
+{
+    //imprimer
+
+           QPrinter printer;
+
+           printer.setPrinterName("desiered printer name");
+
+         QPrintDialog dialog(&printer,this);
+
+           if(dialog.exec()== QDialog::Rejected)
+
+               return;
+}
+
+void MainWindow::on_imp_ca_clicked()
+{
+    //imprimer
+
+           QPrinter printer;
+
+           printer.setPrinterName("desiered printer name");
+
+         QPrintDialog dialog(&printer,this);
+
+           if(dialog.exec()== QDialog::Rejected)
+
+               return;
+}
+
+
+void MainWindow::on_pdf_ca_clicked()
+{
+    QString strStream;
+                      QTextStream out(&strStream);
+
+                      const int rowCount = ui->tab_theme->model()->rowCount();
+                      const int columnCount = ui->tab_theme->model()->columnCount();
+
+                      out <<  "<html>\n"
+                          "<head>\n"
+                          "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+                          <<  QString("<title>%1</title>\n").arg("strTitle")
+                          <<  "</head>\n"
+                          "<body bgcolor=#ffffff link=#5000A0>\n"
+
+                         //     "<align='right'> " << datefich << "</align>"
+                          "<center> <H1>Liste des commandes </H1></br></br><table border=1 cellspacing=0 cellpadding=2>\n";
+
+                      // headers
+                      out << "<thead><tr bgcolor=#f0f0f0> <th>Numero</th>";
+                      for (int column = 0; column < columnCount; column++)
+                          if (!ui->tab_theme->isColumnHidden(column))
+                              out << QString("<th>%1</th>").arg(ui->tab_theme->model()->headerData(column, Qt::Horizontal).toString());
+                      out << "</tr></thead>\n";
+
+                      // data table
+                      for (int row = 0; row < rowCount; row++) {
+                          out << "<tr> <td bkcolor=0>" << row+1 <<"</td>";
+                          for (int column = 0; column < columnCount; column++) {
+                              if (!ui->tab_theme->isColumnHidden(column)) {
+                                  QString data = ui->tab_theme->model()->data(ui->tab_theme->model()->index(row, column)).toString().simplified();
+                                  out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                              }
+                          }
+                          out << "</tr>\n";
+                      }
+                      out <<  "</table> </center>\n"
+                          "</body>\n"
+                          "</html>\n";
+
+                QString fileName = QFileDialog::getSaveFileName((QWidget* )0, "Sauvegarder en PDF", QString(), "*.pdf");
+                  if (QFileInfo(fileName).suffix().isEmpty()) { fileName.append(".pdf"); }
+
+                 QPrinter printer (QPrinter::PrinterResolution);
+                  printer.setOutputFormat(QPrinter::PdfFormat);
+                 printer.setPaperSize(QPrinter::A4);
+                printer.setOutputFileName(fileName);
+
+                 QTextDocument doc;
+                  doc.setHtml(strStream);
+                  doc.setPageSize(printer.pageRect().size()); // This is necessary if you want to hide the page number
+                  doc.print(&printer);
+}

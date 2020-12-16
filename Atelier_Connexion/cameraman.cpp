@@ -1,5 +1,7 @@
 #include "cameraman.h"
 #include "mainwindow.h"
+#include <QDebug>
+#include <QMessageBox>
 
 cameraman::cameraman()
 {
@@ -77,5 +79,38 @@ bool cameraman::modifiert(int id,QString nom,QString theme,QString adrese,int pr
        query.bindValue(":prix", prix_string);
        return  query.exec();
    }
+bool cameraman::recherchert(int id,QString nom,QString adrese)
+{
+    QMessageBox msgBox;
+    QMessageBox msgBox1;
+    QSqlQuery query;
+    bool retour=0;
+    int count=0;
+    query.prepare("SELECT * FROM cameraman WHERE id= ? or nom= ? or adrese= ?");
+    query.addBindValue(nom);
+    query.addBindValue(id);
+    query.addBindValue(adrese);
+    if(query.exec() )
+        {
+while (query.next())
+   {
+   count ++;
+    }
+if(count==1)
+   {
+    msgBox.setText("cameraman existe");
+    msgBox.exec();
+    retour=1;
+   }
+else if (count<1)
+{
+    msgBox1.setText("cameraman n'existe pas");
+        msgBox1.exec();
+        retour=0;
+}
+        }
+    return retour;
+
+}
 
 
