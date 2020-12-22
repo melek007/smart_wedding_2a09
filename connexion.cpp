@@ -14,8 +14,8 @@ db.setPassword("0000");//inserer mot de passe de cet utilisateur
 
 
 if (db.open())
-return true;
-    return  false;
+return  false;
+    return  true;
 }
 void Connexion::fermerConnexion()
 {db.close();}

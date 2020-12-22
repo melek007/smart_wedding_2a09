@@ -18,22 +18,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     connexion.cpp \
     honeymoon.cpp \
+    honeymoonplus.cpp \
     main.cpp \
     mainwindow.cpp \
-    voiture.cpp
+    voiture.cpp \
+    voitureplus.cpp
 
 
 HEADERS += \
     connexion.h \
     honeymoon.h \
+    honeymoonplus.h \
     mainwindow.h \
-    voiture.h
+    voiture.h \
+    voitureplus.h
 
 
 FORMS += \
-    honeymoon.ui \
+    honeymoonplus.ui \
     mainwindow.ui \
-    voiture.ui \
+    voiture.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

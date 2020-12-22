@@ -1,66 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>voiture</class>
+ <widget class="QDialog" name="voiture">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1208</width>
-    <height>595</height>
+    <width>1006</width>
+    <height>579</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Dialog</string>
   </property>
-  <widget class="QTabWidget" name="manageband">
+  <widget class="QTabWidget" name="voiture_2">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>40</y>
-     <width>841</width>
-     <height>471</height>
+     <x>110</x>
+     <y>10</y>
+     <width>821</width>
+     <height>481</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid #C2C7CB;
+}
+
+QTabWidget::tab-bar {
+    left: 5px; /* move to the right by 5px */
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border: 2px solid #C4C4C3;
+    border-bottom-color: #C2C7CB; /* same as the pane color */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-width: 8ex;
+    padding: 2px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
+}
+
+QTabBar::tab:selected {
+    border-color: #9B9B9B;
+    border-bottom-color: #C2C7CB; /* same as pane color */
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px; /* make non-selected tabs look smaller */
+}</string>
    </property>
    <property name="currentIndex">
     <number>3</number>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="documentMode">
+    <bool>true</bool>
+   </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
-     <string>ajouter voiture</string>
+     <string>ajouteur voiture</string>
     </attribute>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>50</x>
        <y>40</y>
-       <width>56</width>
+       <width>141</width>
        <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>ID</string>
+      <string>carte grise</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>100</y>
-       <width>56</width>
+       <x>60</x>
+       <y>80</y>
+       <width>55</width>
        <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>model</string>
+      <string>couleur</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>200</y>
-       <width>56</width>
+       <x>60</x>
+       <y>130</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>marque</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>190</y>
+       <width>55</width>
        <height>16</height>
       </rect>
      </property>
@@ -68,60 +128,176 @@
       <string>prix</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_ID1">
+    <widget class="QLineEdit" name="lineEdit_CARTE_GRISE">
      <property name="geometry">
       <rect>
-       <x>120</x>
+       <x>250</x>
        <y>40</y>
        <width>113</width>
        <height>22</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}</string>
+     </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_nom1">
+    <widget class="QLineEdit" name="lineEdit_couleur">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>110</y>
+       <x>250</x>
+       <y>80</y>
        <width>113</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_marque">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>130</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_prix">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>200</y>
-       <width>151</width>
-       <height>21</height>
+       <x>250</x>
+       <y>180</y>
+       <width>113</width>
+       <height>22</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>520</x>
-       <y>210</y>
+       <x>460</x>
+       <y>60</y>
        <width>93</width>
        <height>28</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>cancel</string>
+      <string>ajouter</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>520</x>
-       <y>100</y>
+       <x>470</x>
+       <y>150</y>
        <width>93</width>
        <height>28</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>ajouter</string>
+      <string>cancel</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Trie voiture</string>
      </property>
     </widget>
    </widget>
@@ -129,99 +305,142 @@
     <attribute name="title">
      <string>afficher voiture</string>
     </attribute>
-    <widget class="QTableView" name="table_band">
+    <widget class="QTableView" name="table_voiture">
      <property name="geometry">
       <rect>
-       <x>15</x>
-       <y>11</y>
-       <width>731</width>
-       <height>391</height>
+       <x>70</x>
+       <y>60</y>
+       <width>381</width>
+       <height>192</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableView {
+    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                stop: 0 #FF92BB, stop: 1 white);
+}</string>
      </property>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
-     <string>modifer voiture</string>
+     <string>supprimer</string>
     </attribute>
-    <widget class="QLabel" name="label_8">
+    <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
        <x>40</x>
-       <y>60</y>
-       <width>141</width>
+       <y>90</y>
+       <width>271</width>
        <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>please insert the ID:</string>
+      <string>mettre le carte grise</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_ID10">
+    <widget class="QLineEdit" name="lineEdit_5">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>100</y>
-       <width>161</width>
+       <x>210</x>
+       <y>140</y>
+       <width>113</width>
        <height>22</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">nameEdit-&gt;setStyleSheet(&quot;background-color: yellow&quot;);</string>
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}
+</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_nom10">
+    <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
-       <x>380</x>
+       <x>390</x>
        <y>150</y>
-       <width>113</width>
-       <height>22</height>
+       <width>93</width>
+       <height>28</height>
       </rect>
      </property>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_prix10">
-     <property name="geometry">
-      <rect>
-       <x>380</x>
-       <y>220</y>
-       <width>113</width>
-       <height>22</height>
-      </rect>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>supprimer</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>modifier voiture</string>
+    </attribute>
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>150</y>
-       <width>56</width>
+       <x>80</x>
+       <y>50</y>
+       <width>55</width>
        <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>model</string>
+      <string>carte grise</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QLabel" name="label_10">
      <property name="geometry">
       <rect>
-       <x>650</x>
-       <y>310</y>
-       <width>101</width>
-       <height>41</height>
+       <x>130</x>
+       <y>140</y>
+       <width>55</width>
+       <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>update</string>
+      <string>couleur</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>190</y>
+       <width>55</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>marque</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
-       <x>270</x>
-       <y>220</y>
-       <width>56</width>
+       <x>130</x>
+       <y>240</y>
+       <width>55</width>
        <height>16</height>
       </rect>
      </property>
@@ -229,58 +448,112 @@
       <string>prix</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QWidget" name="tab_2">
-    <attribute name="title">
-     <string>supprimer voiture</string>
-    </attribute>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>170</y>
-       <width>56</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>ID </string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="LineEdit_key1">
-     <property name="geometry">
-      <rect>
-       <x>260</x>
-       <y>170</y>
+       <x>200</x>
+       <y>50</y>
        <width>113</width>
        <height>22</height>
       </rect>
      </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="geometry">
-      <rect>
-       <x>550</x>
-       <y>270</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>delete</string>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_7">
+    <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>70</y>
-       <width>441</width>
-       <height>16</height>
+       <x>220</x>
+       <y>140</y>
+       <width>113</width>
+       <height>22</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>190</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>240</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 0 8px;
+    background: yellow;
+    selection-background-color: darkgray;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>120</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+
+</string>
+     </property>
      <property name="text">
-      <string>mettre le ID du voiture :</string>
+      <string>modifier</string>
      </property>
     </widget>
    </widget>

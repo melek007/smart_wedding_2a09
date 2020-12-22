@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include"voiture.h"
-#include"honeymonn.h"
+#include"honeymoonplus.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,7 +25,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 
 void MainWindow::on_pushButton_clicked()
-{ the_band b;
+{ honeymoonplus b;
     b.show();
     b.exec();
 

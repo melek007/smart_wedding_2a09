@@ -1,30 +1,34 @@
 #ifndef VOITURE_H
 #define VOITURE_H
-#include"QString"
-#include <QSqlQuery>
-#include <QSqlQueryModel>
+#include <voitureplus.h>
 
-class voiture
+#include <QDialog>
+
+namespace Ui {
+class voiture;
+}
+
+class voiture : public QDialog
 {
+    Q_OBJECT
+
 public:
-    voiture();
-     voiture(int,QString,int);
-       int getID();
-        QString getmodel();
-          int getprix();
+    explicit voiture(QWidget *parent = nullptr);
+    ~voiture();
 
-          void setID(int );
-          void setmodel(QString );
-          void setprix(int);
-          bool ajouter();
-          QSqlQueryModel * afficher();
-          bool supprimer(int);
-          bool modifier();
+private slots:
+    void on_pushButton_clicked();
 
 
-    private:
-          QString model ;
-          int ID,prix;
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+private:
+    Ui::voiture *ui;
+     voitureplus tmpvoitureplus;
 };
 
 #endif // VOITURE_H

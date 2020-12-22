@@ -8,24 +8,23 @@ class honeymoon
 {
 public:
     honeymoon();
-     honeymoon(int,QString,int);
+     honeymoon(int,QString,int,QString);
        int getID();
 
-         QString getadresse();
-
+         QString getlieu();
           int getprix();
-
+        QString getnom_hotel();
           void setID(int );
-          void setadresse(QString );
+          void setlieu(QString );
           void setprix(int);
+          void setnom_hotel(QString );
           bool ajouter();
           QSqlQueryModel * afficher();
           bool supprimer(int);
           bool modifier();
-
-
+          bool rechercher(int,int,QString);
     private:
-          QString adresse  ;
+          QString lieu ,nom_hotel ;
           int ID,prix;
 };
 
