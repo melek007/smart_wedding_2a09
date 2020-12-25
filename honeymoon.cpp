@@ -40,13 +40,11 @@ this->ID=ID;  this->lieu=lieu;this->prix=prix;  this->nom_hotel=nom_hotel;
            QString id_string= QString::number(ID);
 
                   query.prepare("INSERT INTO honeymoon (id,  lieu,prix,nom_hotel) "
-                                "VALUES (:id, :place,:price;nom_hotel)");
+                                "VALUES (:id, :lieu,:prix,:nom_hotel)");
                   query.bindValue(":id",id_string);
-
                   query.bindValue(":lieu", lieu);
-
                   query.bindValue(":prix", prix);
-
+                  query.bindValue(":nom_hotel", nom_hotel);
                  return query.exec();}
 
       bool honeymoon::supprimer(int id)
@@ -62,12 +60,11 @@ this->ID=ID;  this->lieu=lieu;this->prix=prix;  this->nom_hotel=nom_hotel;
         QSqlQueryModel* model=new QSqlQueryModel();
 
 
-         model->setQuery("SELECT* FROM honeymoon");
-         model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identenfiant"));
-         model->setHeaderData(2, Qt::Horizontal, QObject::tr("lieu"));
-         model->setHeaderData(3, Qt::Horizontal, QObject::tr("prix"));
-
-        model->setHeaderData(4, Qt::Horizontal, QObject::tr("nom_hotel"));
+         model->setQuery("SELECT id,lieu,prix,nom_hotel FROM honeymoon");
+         model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Lieu"));
+         model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prix"));
+        model->setHeaderData(3, Qt::Horizontal, QObject::tr("Nom hotel"));
         return  model;
       }
       bool honeymoon::modifier()
@@ -76,12 +73,11 @@ this->ID=ID;  this->lieu=lieu;this->prix=prix;  this->nom_hotel=nom_hotel;
               QSqlQuery query;
               QString id_string=QString::number(ID);
 
-             query.prepare(" UPDATE honeymoon SET ID=:ID,lieu=:lieu,prix=:prix,nom_hotel:=nom_hotel, WHERE ID=:ID");
-                    query.bindValue(":ID", id_string);
-
-                       query.bindValue(":lieu",lieu);
-   query.bindValue(":nom_hotel",nom_hotel);
-                    query.bindValue(":prix",prix);
+              query.prepare(" UPDATE honeymoon SET lieu=:lieu,prix=:prix,nom_hotel=:nom_hotel WHERE ID=:ID");
+              query.bindValue(":ID", id_string);
+              query.bindValue(":lieu",lieu);
+              query.bindValue(":nom_hotel",nom_hotel);
+              query.bindValue(":prix",prix);
 
 
                     return query.exec();
@@ -96,7 +92,7 @@ this->ID=ID;  this->lieu=lieu;this->prix=prix;  this->nom_hotel=nom_hotel;
           QSqlQuery query;
           bool retour=0;
           int count=0;
-          query.prepare("SELECT * FROM honeymoonplus WHERE ID= ?,prix= ?,lieu= ? ");
+          query.prepare("SELECT * FROM honeymoon WHERE ID= ?,prix= ?,lieu= ? ");
           query.addBindValue(ID);
           query.addBindValue(prix);
           query.addBindValue(lieu);
@@ -123,4 +119,31 @@ this->ID=ID;  this->lieu=lieu;this->prix=prix;  this->nom_hotel=nom_hotel;
 
       }
 
+      honeymoon honeymoon::findByID(QString ID){
+
+          QSqlQuery query;
+          honeymoon honeymoon1 = honeymoon() ;
+          query.prepare(" select ID,lieu,prix,nom_hotel from honeymoon where ID="+ID);
+          query.exec();
+          query.next();
+          honeymoon1.setID(query.value(0).toInt());
+          honeymoon1.setlieu(query.value(1).toString());
+           honeymoon1.setprix(query.value(2).toInt());
+          honeymoon1.setnom_hotel(query.value(3).toString());
+
+      return honeymoon1;
+      }
+
+      bool honeymoon::checkExisteHoneymoon(QString ID){
+
+          QSqlQuery query;
+          honeymoon voiture = honeymoon() ;
+          query.prepare("select count(*) as nbr from honeymoon where ID="+ID);
+          query.exec();
+          query.next();
+          if(query.value("nbr").toInt() > 0){
+              return true;
+          }
+          return false;
+      }
 

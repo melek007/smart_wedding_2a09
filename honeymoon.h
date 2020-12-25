@@ -23,6 +23,8 @@ public:
           bool supprimer(int);
           bool modifier();
           bool rechercher(int,int,QString);
+          honeymoon findByID(QString);
+          bool checkExisteHoneymoon(QString);
     private:
           QString lieu ,nom_hotel ;
           int ID,prix;

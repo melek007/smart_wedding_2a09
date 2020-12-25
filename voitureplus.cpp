@@ -68,7 +68,7 @@ bool voitureplus::modifier()
         QSqlQuery query;
         QString carte_grise_string=QString::number(CARTE_GRISE);
 
-       query.prepare(" UPDATE voiture SET CARTE_GRISE=:CARTE_GRISE,couleur=:couleur,marque=:marque,prix=:prix WHERE CARTE_GRISE=:CARTE_GRISE");
+       query.prepare(" UPDATE voiture SET couleur=:couleur,marque=:marque,prix=:prix WHERE CARTE_GRISE=:CARTE_GRISE");
               query.bindValue(":CARTE_GRISE", carte_grise_string);
               query.bindValue(":couleur",couleur);
                  query.bindValue(":marque",marque);

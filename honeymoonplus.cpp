@@ -18,15 +18,20 @@ honeymoonplus::~honeymoonplus()
     delete ui;
 }
 
-void honeymoonplus::on_pushButton_2_clicked()
-{
+void honeymoonplus::on_ajouter_honeymoon_clicked()
+{QMessageBox msgBox;
 
         int id=ui->lineEdit_ID0->text().toInt();
             QString lieu=ui->lineEdit_lieu1->text();
             int prix=ui->lineEdit_prix1->text().toInt();
              QString nom_hotel=ui->lineEdit_nomhotel_2->text();
 
-
+             honeymoon v;
+              if(v.checkExisteHoneymoon(ui->lineEdit_ID0->text()))
+                {  msgBox.setText("honeymoon existe deja");
+                   msgBox.exec();
+                   return;
+              }
 
              honeymoon b(id,lieu,prix,nom_hotel);
          bool test=b.ajouter();
@@ -58,38 +63,23 @@ void honeymoonplus::on_pushButton_2_clicked()
 
 
 
-void honeymoonplus::on_pushButton_3_clicked()
-{
-    honeymoon s;
-    s.setID(ui->LineEdit_10->text().toInt());
-    bool test=s.supprimer(s.getID());
-    QMessageBox msgBox;
 
-    if(test)
-       { msgBox.setText("Suppression avec succes.");
-    ui->table_honeymoon->setModel(s.afficher());
 
-    }
-    else
-        msgBox.setText("Echec de suppression");
-        msgBox.exec();
-}
-
-void honeymoonplus::on_pushButton_4_clicked()
+void honeymoonplus::on_modifier1_clicked()
 {
 
-            int ID=ui->LineEdit_10->text().toInt();
-            QString lieu=ui->LineEdit_blasa->text();
+            int ID=ui->id_edit_supp->text().toInt();
+            QString lieu=ui->lieu_edit_supp->text();
 
-                int prix=ui->LineEdit_soum->text().toInt();
-               QString nom_hotel=ui->lineEdit_esm->text();
+                int prix=ui->prix_edit_supp->text().toInt();
+               QString nom_hotel=ui->nom_hotel_edit_supp->text();
 
 
 
 
             honeymoon H1 (ID,lieu ,prix,nom_hotel);
-             bool test=H1.modifier();
-             if(test)
+             bool updated=H1.modifier();
+             if(updated)
              {
 
                  QMessageBox::information(nullptr, QObject::tr("database is open"),
@@ -101,9 +91,6 @@ void honeymoonplus::on_pushButton_4_clicked()
 
                  QMessageBox::critical(nullptr, QObject::tr("database is not open"),
                              QObject::tr("echec de modification\n""Click Cancel to exit."), QMessageBox::Cancel);
-
-
-
 
 
 }
@@ -126,4 +113,62 @@ void honeymoonplus::on_tri_par_lieu_clicked()
 void honeymoonplus::on_tri_par_id_clicked()
 {
 
+}
+
+
+
+void honeymoonplus::on_get_data_by_id_clicked()
+{
+    {
+        QMessageBox msgBox;
+        honeymoon E1;
+        QString honey = ui->id_edit_supp->text();
+        if(honey == NULL){
+            msgBox.setText("S'il vous plait saisir une ID");
+            msgBox.exec();
+            return;
+        }
+       honeymoon  honeymoonExiste = E1.findByID(honey);
+       if(honeymoonExiste.getID() == NULL){
+           msgBox.setText("Voiture n'existe pas");
+           msgBox.exec();
+           return;
+       }
+       ui->nom_hotel_edit_supp->setText(honeymoonExiste.getnom_hotel());
+       ui->lieu_edit_supp->setText(honeymoonExiste.getlieu());
+       ui->prix_edit_supp->setText(QString::number(honeymoonExiste.getprix()));
+    }
+}
+
+void honeymoonplus::on_reinitialisation_clicked()
+{
+    ui->lineEdit_ID0->setText("");
+    ui->lineEdit_lieu1->setText("");
+    ui->lineEdit_nomhotel_2->setText("");
+    ui->lineEdit_prix1->setText("");
+}
+
+void honeymoonplus::on_supprimer_honeymoon_clicked()
+{
+
+    QMessageBox msgBox;
+    honeymoon E1;
+    QString carte = ui->id_edit_supp->text();
+    if(carte == NULL){
+        msgBox.setText("S'il vous plait saisir une carte grise");
+        msgBox.exec();
+        return;
+    }
+   honeymoon  honeymoonExiste = E1.findByID(carte);
+   if(honeymoonExiste.getID() == NULL){
+       msgBox.setText("Voiture n'existe pas");
+       msgBox.exec();
+       return;
+   }
+    bool deleted=E1.supprimer(carte.toInt());
+    if(deleted)
+        msgBox.setText("Suppression avec succes.");
+    else
+        msgBox.setText("Echec de suppression");
+    msgBox.exec();
 }

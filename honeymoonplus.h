@@ -16,11 +16,7 @@ public:
     ~honeymoonplus();
 
 private slots:
-    void on_pushButton_2_clicked();
 
-    void on_pushButton_3_clicked();
-
-    void on_pushButton_4_clicked();
 
     void on_recherche_honeymoon_clicked();
 
@@ -29,6 +25,16 @@ private slots:
     void on_tri_par_lieu_clicked();
 
     void on_tri_par_id_clicked();
+
+    void on_ajouter_honeymoon_clicked();
+
+    void on_modifier1_clicked();
+
+    void on_get_data_by_id_clicked();
+
+    void on_reinitialisation_clicked();
+
+    void on_supprimer_honeymoon_clicked();
 
 private:
     Ui::honeymoonplus *ui;
