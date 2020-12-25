@@ -54,34 +54,30 @@ void voiture::on_Ajouter_voiture_clicked()
 
 void voiture::on_recherche_clicked()
 {
-    QMessageBox msgBox ;
-            QSqlQueryModel *model = new QSqlQueryModel();
-                     model->setQuery("SELECT * FROM voiture order by nom ASC");
-                     model->setHeaderData(1, Qt::Horizontal, QObject::tr("CARTE_GRISE"));
-                     model->setHeaderData(1, Qt::Horizontal, QObject::tr("couleur"));
-                     model->setHeaderData(2, Qt::Horizontal, QObject::tr("marque"));
-                     model->setHeaderData(3, Qt::Horizontal, QObject::tr("prix"));
-                     ui->table_voiture->setModel(model);
-                     ui->table_voiture->show();
-                     msgBox.setText("Tri avec succès.");
-                     msgBox.exec();
-
-
+QString requete = createRequete();
+execute(requete);
 }
 
 void voiture::on_tri_par_cartegrise_clicked()
 {
-
+QString requete = createRequete();
+requete+= " order by carte_grise ASC";
+execute(requete);
 }
 
 void voiture::on_tri_par_couleur_clicked()
 {
 
+QString requete = createRequete();
+requete+= " order by couleur ASC";
+    execute(requete);
 }
 
 void voiture::on_tri_par_marque_clicked()
 {
-
+QString requete = createRequete();
+requete+= " order by marque ASC";
+    execute(requete);
 }
 
 void voiture::on_get_data_voiture_by_id_clicked()
@@ -162,3 +158,42 @@ void voiture::on_renitialisation_clicked()
     ui->lineEdit_marque->setText("");
     ui->lineEdit_prix->setText("");
 }
+
+void voiture::execute(QString requete){
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery(requete);
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("CARTE_GRISE"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("couleur"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("marque"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("prix"));
+    ui->table_voiture->setModel(model);
+    ui->table_voiture->show();
+}
+
+QString voiture::createRequete(){
+
+    QString requete="SELECT carte_grise,couleur,marque,prix FROM voiture";
+    QString critaire = "";
+        QString CARTE_GRISE=ui->recherche_par_cartegrise->text();
+        QString couleur=ui->recherche_par_couleur->text();
+        QString marque=ui->recherche_par_marque->text();
+        if(CARTE_GRISE != NULL or couleur != NULL or marque !=NULL){
+            critaire = " where ";
+        }
+        if(CARTE_GRISE != NULL){
+            critaire += " carte_grise="+CARTE_GRISE;
+        }
+        if(couleur != NULL){
+            if(critaire != " where ")
+                critaire+= " and ";
+            critaire += " couleur='"+couleur+"'";
+        }
+        if(marque != NULL){
+            if(critaire != " where ")
+                critaire+= " and ";
+            critaire += " marque='"+marque+"'";
+        }
+requete+=critaire;
+return requete;
+}
+

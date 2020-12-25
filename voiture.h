@@ -36,6 +36,10 @@ private slots:
 
     void on_renitialisation_clicked();
 
+    void execute(QString);
+
+    QString createRequete();
+
 private:
     Ui::voiture *ui;
     voitureplus tmpvoitureplus;
