@@ -52,8 +52,8 @@ QSqlQueryModel* voitureplus::afficher()
   QSqlQueryModel* model=new QSqlQueryModel();
 
 
-   model->setQuery("SELECT* FROM chant");
-   model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identenfiant"));
+   model->setQuery("SELECT carte_grise,couleur,marque,prix FROM voiture");
+   model->setHeaderData(0, Qt::Horizontal, QObject::tr("carte_grise"));
    model->setHeaderData(1, Qt::Horizontal, QObject::tr("couleur"));
    model->setHeaderData(2, Qt::Horizontal, QObject::tr("marque"));
    model->setHeaderData(3, Qt::Horizontal, QObject::tr("prix"));

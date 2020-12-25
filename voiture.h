@@ -26,6 +26,16 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_recherche_clicked();
+
+    void on_tri_par_cartegrise_clicked();
+
+    void on_tri_par_couleur_clicked();
+
+    void on_tri_par_marque_clicked();
+
+    void on_get_data_voiture_by_id_clicked();
+
 private:
     Ui::voiture *ui;
      voitureplus tmpvoitureplus;

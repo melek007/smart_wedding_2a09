@@ -107,3 +107,23 @@ void honeymoonplus::on_pushButton_4_clicked()
 
 
 }
+
+void honeymoonplus::on_recherche_honeymoon_clicked()
+{
+
+}
+
+void honeymoonplus::on_tri_par_prix_clicked()
+{
+
+}
+
+void honeymoonplus::on_tri_par_lieu_clicked()
+{
+
+}
+
+void honeymoonplus::on_tri_par_id_clicked()
+{
+
+}

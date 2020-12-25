@@ -22,6 +22,14 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_recherche_honeymoon_clicked();
+
+    void on_tri_par_prix_clicked();
+
+    void on_tri_par_lieu_clicked();
+
+    void on_tri_par_id_clicked();
+
 private:
     Ui::honeymoonplus *ui;
     honeymoon tmphoneymoon;

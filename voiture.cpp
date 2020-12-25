@@ -111,7 +111,6 @@ void voiture::on_pushButton_5_clicked()
                      model->setQuery("SELECT * FROM voiture order by nom ASC");
                      model->setHeaderData(1, Qt::Horizontal, QObject::tr("CARTE_GRISE"));
                      model->setHeaderData(1, Qt::Horizontal, QObject::tr("couleur"));
-
                      model->setHeaderData(2, Qt::Horizontal, QObject::tr("marque"));
                      model->setHeaderData(3, Qt::Horizontal, QObject::tr("prix"));
                      ui->table_voiture->setModel(model);
@@ -120,3 +119,28 @@ void voiture::on_pushButton_5_clicked()
                      msgBox.exec();
 }
 
+
+void voiture::on_recherche_clicked()
+{
+
+}
+
+void voiture::on_tri_par_cartegrise_clicked()
+{
+
+}
+
+void voiture::on_tri_par_couleur_clicked()
+{
+
+}
+
+void voiture::on_tri_par_marque_clicked()
+{
+
+}
+
+void voiture::on_get_data_voiture_by_id_clicked()
+{
+
+}

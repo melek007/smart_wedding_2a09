@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1079</width>
-    <height>545</height>
+    <width>1219</width>
+    <height>680</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,10 +28,10 @@
   <widget class="QTabWidget" name="honeymoon">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>20</y>
-     <width>811</width>
-     <height>481</height>
+     <x>80</x>
+     <y>10</y>
+     <width>1041</width>
+     <height>601</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -73,11 +73,11 @@ QTabBar::tab:!selected {
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
-     <string>ajout honeymoon</string>
+     <string>Ajouter honeymoon</string>
     </attribute>
     <widget class="QLabel" name="label">
      <property name="geometry">
@@ -95,14 +95,14 @@ QTabBar::tab:!selected {
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>135</y>
+       <x>40</x>
+       <y>130</y>
        <width>56</width>
        <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>lieu1</string>
+      <string>lieu</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
@@ -121,10 +121,10 @@ QTabBar::tab:!selected {
     <widget class="QLineEdit" name="lineEdit_ID0">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>50</y>
-       <width>113</width>
-       <height>22</height>
+       <x>250</x>
+       <y>60</y>
+       <width>171</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -140,10 +140,10 @@ QTabBar::tab:!selected {
     <widget class="QLineEdit" name="lineEdit_lieu1">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>150</y>
-       <width>113</width>
-       <height>22</height>
+       <x>250</x>
+       <y>140</y>
+       <width>171</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -159,10 +159,10 @@ QTabBar::tab:!selected {
     <widget class="QLineEdit" name="lineEdit_prix1">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>240</y>
-       <width>113</width>
-       <height>22</height>
+       <x>250</x>
+       <y>230</y>
+       <width>161</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -178,8 +178,8 @@ QTabBar::tab:!selected {
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>460</x>
-       <y>140</y>
+       <x>660</x>
+       <y>410</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -204,14 +204,14 @@ QTabBar::tab:!selected {
 </string>
      </property>
      <property name="text">
-      <string>add</string>
+      <string>ajouter</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>460</x>
-       <y>230</y>
+       <x>790</x>
+       <y>410</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -236,14 +236,14 @@ QTabBar::tab:!selected {
 </string>
      </property>
      <property name="text">
-      <string>cancel</string>
+      <string>Annuler</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>330</y>
+       <x>40</x>
+       <y>310</y>
        <width>56</width>
        <height>31</height>
       </rect>
@@ -255,10 +255,10 @@ QTabBar::tab:!selected {
     <widget class="QLineEdit" name="lineEdit_nomhotel_2">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>340</y>
-       <width>113</width>
-       <height>22</height>
+       <x>250</x>
+       <y>320</y>
+       <width>161</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -274,125 +274,122 @@ QTabBar::tab:!selected {
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
-     <string>afficher honeymoon</string>
+     <string>Afficher honeymoon</string>
     </attribute>
     <widget class="QTableView" name="table_honeymoon">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>11</y>
+       <x>80</x>
+       <y>180</y>
        <width>691</width>
        <height>301</height>
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="tri_par_lieu">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>370</y>
-       <width>181</width>
+       <x>200</x>
+       <y>140</y>
+       <width>71</width>
        <height>28</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-
-  background-color: #505F69;
-
-  border: 1px solid #32414B;
-
-  color: #F0F0F0;
-
-  border-radius: 4px;
-
-  padding: 3px;
-
-  outline: none;
-
-}
-
-</string>
-     </property>
      <property name="text">
-      <string>rechercher par ID</string>
+      <string>Tri par lieu</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="recherche_honeymoon">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>370</y>
-       <width>181</width>
+       <x>650</x>
+       <y>50</y>
+       <width>93</width>
        <height>28</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-
-  background-color: #505F69;
-
-  border: 1px solid #32414B;
-
-  color: #F0F0F0;
-
-  border-radius: 4px;
-
-  padding: 3px;
-
-  outline: none;
-
-}
-
-</string>
-     </property>
      <property name="text">
-      <string>rechercher par lieu</string>
+      <string>Recherche</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QLabel" name="label_22">
      <property name="geometry">
       <rect>
-       <x>420</x>
-       <y>370</y>
-       <width>181</width>
+       <x>260</x>
+       <y>50</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lieu</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>50</y>
+       <width>21</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>prix</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="tri_par_id">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>140</y>
+       <width>81</width>
        <height>28</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-
-  background-color: #505F69;
-
-  border: 1px solid #32414B;
-
-  color: #F0F0F0;
-
-  border-radius: 4px;
-
-  padding: 3px;
-
-  outline: none;
-
-}
-
-</string>
-     </property>
      <property name="text">
-      <string>rechercher par prix</string>
+      <string>Tri par ID</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QWidget" name="tab_3">
-    <attribute name="title">
-     <string>supprimer honeymoon</string>
-    </attribute>
-    <widget class="QLabel" name="label_5">
+    <widget class="QPushButton" name="tri_par_prix">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>70</y>
-       <width>56</width>
+       <x>290</x>
+       <y>140</y>
+       <width>81</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tri par prix</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="recherche_par_prix">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>50</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="recherche_par_id">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>50</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_24">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>50</y>
+       <width>41</width>
        <height>16</height>
       </rect>
      </property>
@@ -400,61 +397,20 @@ QTabBar::tab:!selected {
       <string>ID</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="LineEdit_key">
+    <widget class="QLineEdit" name="recherche_par_lieu">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>70</y>
+       <x>320</x>
+       <y>50</y>
        <width>113</width>
        <height>22</height>
       </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>210</y>
-       <width>93</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-
-  background-color: #505F69;
-
-  border: 1px solid #32414B;
-
-  color: #F0F0F0;
-
-  border-radius: 4px;
-
-  padding: 3px;
-
-  outline: none;
-
-}
-
-</string>
-     </property>
-     <property name="text">
-      <string>supprimer</string>
      </property>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
-     <string>modifer honeymoon</string>
+     <string>Modifier et Supprimer</string>
     </attribute>
     <widget class="QLabel" name="label_6">
      <property name="geometry">
@@ -466,14 +422,14 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="text">
-      <string>please write the ID</string>
+      <string>Mettre le ID</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="LineEdit_10">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>90</y>
+       <x>220</x>
+       <y>50</y>
        <width>141</width>
        <height>22</height>
       </rect>
@@ -491,8 +447,8 @@ QTabBar::tab:!selected {
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>150</y>
+       <x>110</x>
+       <y>240</y>
        <width>56</width>
        <height>16</height>
       </rect>
@@ -504,8 +460,8 @@ QTabBar::tab:!selected {
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>260</y>
+       <x>110</x>
+       <y>300</y>
        <width>101</width>
        <height>16</height>
       </rect>
@@ -517,9 +473,9 @@ QTabBar::tab:!selected {
     <widget class="QLineEdit" name="LineEdit_blasa">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>190</y>
-       <width>113</width>
+       <x>302</x>
+       <y>240</y>
+       <width>201</width>
        <height>22</height>
       </rect>
      </property>
@@ -536,9 +492,9 @@ QTabBar::tab:!selected {
     <widget class="QLineEdit" name="LineEdit_soum">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>300</x>
        <y>310</y>
-       <width>113</width>
+       <width>201</width>
        <height>22</height>
       </rect>
      </property>
@@ -552,11 +508,11 @@ QTabBar::tab:!selected {
 }</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="sauvegrader">
      <property name="geometry">
       <rect>
-       <x>640</x>
-       <y>370</y>
+       <x>800</x>
+       <y>400</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -581,15 +537,15 @@ QTabBar::tab:!selected {
 </string>
      </property>
      <property name="text">
-      <string>update</string>
+      <string>Sauvegarder</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_esm">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>310</x>
        <y>160</y>
-       <width>113</width>
+       <width>191</width>
        <height>22</height>
       </rect>
      </property>
@@ -606,14 +562,46 @@ QTabBar::tab:!selected {
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>390</x>
-       <y>120</y>
+       <x>110</x>
+       <y>160</y>
        <width>56</width>
-       <height>16</height>
+       <height>20</height>
       </rect>
      </property>
      <property name="text">
       <string>nom hotel</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="get_data_by_id">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>40</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Recherche par ID</string>
      </property>
     </widget>
    </widget>
