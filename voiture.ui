@@ -61,7 +61,7 @@ QTabBar::tab:!selected {
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <property name="iconSize">
     <size>
@@ -204,7 +204,7 @@ QTabBar::tab:!selected {
 }</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="Ajouter_voiture">
      <property name="geometry">
       <rect>
        <x>550</x>
@@ -236,7 +236,7 @@ QTabBar::tab:!selected {
       <string>Ajouter</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="renitialisation">
      <property name="geometry">
       <rect>
        <x>670</x>
@@ -265,7 +265,7 @@ QTabBar::tab:!selected {
 </string>
      </property>
      <property name="text">
-      <string>Annuler</string>
+      <string>Reinitialisation</string>
      </property>
     </widget>
    </widget>
@@ -467,7 +467,7 @@ QTabBar::tab:!selected {
       <string>prix</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="carte_grise_edit_supp">
      <property name="geometry">
       <rect>
        <x>240</x>
@@ -486,7 +486,7 @@ QTabBar::tab:!selected {
 }</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="edit_supp_input_color">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -505,7 +505,7 @@ QTabBar::tab:!selected {
 }</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
+    <widget class="QLineEdit" name="edit_supp_input_marque">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -524,7 +524,7 @@ QTabBar::tab:!selected {
 }</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_4">
+    <widget class="QLineEdit" name="edit_supp_input_prix">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -543,7 +543,7 @@ QTabBar::tab:!selected {
 }</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="modifer">
      <property name="geometry">
       <rect>
        <x>750</x>
@@ -607,7 +607,7 @@ QTabBar::tab:!selected {
       <string>Recherche par carte grise</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="Supprimer">
      <property name="geometry">
       <rect>
        <x>880</x>

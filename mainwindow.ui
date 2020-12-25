@@ -2619,7 +2619,7 @@ QSlider::sub-page:horizontal:disabled {
 }</string>
      </property>
      <property name="text">
-      <string>gerer voiture</string>
+      <string>gerer honeymoon</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_2">
@@ -2641,7 +2641,7 @@ QSlider::sub-page:horizontal:disabled {
 }</string>
      </property>
      <property name="text">
-      <string>gerer honeymoon</string>
+      <string>gerer voiture</string>
      </property>
     </widget>
    </widget>

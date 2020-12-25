@@ -61,7 +61,7 @@ void honeymoonplus::on_pushButton_2_clicked()
 void honeymoonplus::on_pushButton_3_clicked()
 {
     honeymoon s;
-    s.setID(ui->LineEdit_key->text().toInt());
+    s.setID(ui->LineEdit_10->text().toInt());
     bool test=s.supprimer(s.getID());
     QMessageBox msgBox;
 

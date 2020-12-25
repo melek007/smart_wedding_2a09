@@ -17,14 +17,6 @@ public:
     ~voiture();
 
 private slots:
-    void on_pushButton_clicked();
-
-
-    void on_pushButton_3_clicked();
-
-    void on_pushButton_4_clicked();
-
-    void on_pushButton_5_clicked();
 
     void on_recherche_clicked();
 
@@ -36,9 +28,17 @@ private slots:
 
     void on_get_data_voiture_by_id_clicked();
 
+    void on_modifer_clicked();
+
+    void on_Supprimer_clicked();
+
+    void on_Ajouter_voiture_clicked();
+
+    void on_renitialisation_clicked();
+
 private:
     Ui::voiture *ui;
-     voitureplus tmpvoitureplus;
+    voitureplus tmpvoitureplus;
 };
 
 #endif // VOITURE_H

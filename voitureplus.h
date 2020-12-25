@@ -22,6 +22,8 @@ public:
           QSqlQueryModel * afficher();
           bool supprimer(int);
           bool modifier();
+          voitureplus findByCarteGrise(QString);
+          bool checkExisteVoiture(QString);
 
 
     private:

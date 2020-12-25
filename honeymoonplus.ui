@@ -511,8 +511,8 @@ QTabBar::tab:!selected {
     <widget class="QPushButton" name="sauvegrader">
      <property name="geometry">
       <rect>
-       <x>800</x>
-       <y>400</y>
+       <x>720</x>
+       <y>390</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -602,6 +602,38 @@ QTabBar::tab:!selected {
      </property>
      <property name="text">
       <string>Recherche par ID</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="supprimer_honeymoon">
+     <property name="geometry">
+      <rect>
+       <x>870</x>
+       <y>390</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Supprimer</string>
      </property>
     </widget>
    </widget>

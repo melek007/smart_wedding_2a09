@@ -1,4 +1,5 @@
 #include "voitureplus.h"
+#include "voiture.h"
 #include <QSqlQuery>
 #include <QtDebug>
 #include <QObject>
@@ -37,7 +38,8 @@ bool voitureplus:: ajouter()
             query.bindValue(":couleur", couleur);
             query.bindValue(":marque", marque);
             query.bindValue(":prix", prix);
-           return query.exec();}
+           return query.exec();
+}
 
 bool voitureplus::supprimer(int carte_grise)
 {
@@ -58,7 +60,6 @@ QSqlQueryModel* voitureplus::afficher()
    model->setHeaderData(2, Qt::Horizontal, QObject::tr("marque"));
    model->setHeaderData(3, Qt::Horizontal, QObject::tr("prix"));
 
-
   return  model;
 }
 bool voitureplus::modifier()
@@ -67,13 +68,40 @@ bool voitureplus::modifier()
         QSqlQuery query;
         QString carte_grise_string=QString::number(CARTE_GRISE);
 
-       query.prepare(" UPDATE chant SET CARTE_GRISE=:CARTE_GRISE,couleur=:couleur,marque=:marque,prix=:prix WHERE CARTE_GRISE=:CARTE_GRISE");
+       query.prepare(" UPDATE voiture SET CARTE_GRISE=:CARTE_GRISE,couleur=:couleur,marque=:marque,prix=:prix WHERE CARTE_GRISE=:CARTE_GRISE");
               query.bindValue(":CARTE_GRISE", carte_grise_string);
               query.bindValue(":couleur",couleur);
                  query.bindValue(":marque",marque);
               query.bindValue(":prix",prix);
 
               return query.exec();
-
-
 }
+
+voitureplus voitureplus::findByCarteGrise(QString carte_grise){
+
+    QSqlQuery query;
+    voitureplus voiture = voitureplus() ;
+    query.prepare(" select carte_grise,couleur,marque,prix from voiture where carte_grise="+carte_grise);
+    query.exec();
+    query.next();
+    voiture.setCARTE_GRISE(query.value(0).toInt());
+    voiture.setcouleur(query.value(1).toString());
+    voiture.setmarque(query.value(2).toString());
+    voiture.setprix(query.value(3).toInt());
+return voiture;
+}
+
+bool voitureplus::checkExisteVoiture(QString carte_grise){
+
+    QSqlQuery query;
+    voitureplus voiture = voitureplus() ;
+    query.prepare("select count(*) as nbr from voiture where carte_grise="+carte_grise);
+    query.exec();
+    query.next();
+    if(query.value("nbr").toInt() > 0){
+        return true;
+    }
+    return false;
+}
+
+
