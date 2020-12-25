@@ -85,40 +85,6 @@ this->ID=ID;  this->lieu=lieu;this->prix=prix;  this->nom_hotel=nom_hotel;
 
       }
 
-      bool honeymoon::rechercher(int ID,int prix,QString lieu)
-      {
-          QMessageBox msgBox;
-          QMessageBox msgBox1;
-          QSqlQuery query;
-          bool retour=0;
-          int count=0;
-          query.prepare("SELECT * FROM honeymoon WHERE ID= ?,prix= ?,lieu= ? ");
-          query.addBindValue(ID);
-          query.addBindValue(prix);
-          query.addBindValue(lieu);
-          if(query.exec() )
-              {
-      while (query.next())
-         {
-         count ++;
-          }
-      if(count==1)
-         {
-          msgBox.setText("honeymoonplus existe");
-          msgBox.exec();
-          retour=1;
-         }
-      else if (count<1)
-      {
-          msgBox1.setText("honeymoonplus n'existe pas");
-              msgBox1.exec();
-              retour=0;
-      }
-              }
-          return retour;
-
-      }
-
       honeymoon honeymoon::findByID(QString ID){
 
           QSqlQuery query;

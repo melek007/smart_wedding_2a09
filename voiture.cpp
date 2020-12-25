@@ -95,6 +95,7 @@ void voiture::on_get_data_voiture_by_id_clicked()
        msgBox.setText("Voiture n'existe pas");
        msgBox.exec();
        return;
+
    }
    ui->edit_supp_input_color->setText(voitureExiste.getcouleur());
    ui->edit_supp_input_marque->setText(voitureExiste.getmarque());

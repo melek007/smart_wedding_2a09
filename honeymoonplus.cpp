@@ -95,27 +95,6 @@ void honeymoonplus::on_modifier1_clicked()
 
 }
 
-void honeymoonplus::on_recherche_honeymoon_clicked()
-{
-
-}
-
-void honeymoonplus::on_tri_par_prix_clicked()
-{
-
-}
-
-void honeymoonplus::on_tri_par_lieu_clicked()
-{
-
-}
-
-void honeymoonplus::on_tri_par_id_clicked()
-{
-
-}
-
-
 
 void honeymoonplus::on_get_data_by_id_clicked()
 {
@@ -130,7 +109,7 @@ void honeymoonplus::on_get_data_by_id_clicked()
         }
        honeymoon  honeymoonExiste = E1.findByID(honey);
        if(honeymoonExiste.getID() == NULL){
-           msgBox.setText("Voiture n'existe pas");
+           msgBox.setText("honeymoon n'existe pas");
            msgBox.exec();
            return;
        }
@@ -171,4 +150,70 @@ void honeymoonplus::on_supprimer_honeymoon_clicked()
     else
         msgBox.setText("Echec de suppression");
     msgBox.exec();
+}
+
+void honeymoonplus::on_tri_par_id_clicked()
+{
+
+    QString requete = createRequete();
+    requete+= " order by ID ASC";
+        execute(requete);
+}
+
+void honeymoonplus::on_tri_par_lieu_clicked()
+{
+
+    QString requete = createRequete();
+    requete+= " order by lieu ASC";
+        execute(requete);
+}
+
+void honeymoonplus::on_tri_par_prix_clicked()
+{
+
+    QString requete = createRequete();
+    requete+= " order by prix ASC";
+        execute(requete);
+}
+void honeymoonplus::on_recherche_honeymoon_clicked()
+{
+QString requete = createRequete();
+execute(requete);
+}
+QString honeymoonplus::createRequete(){
+
+    QString requete="SELECT ID,lieu,prix FROM honeymoon";
+    QString critaire = "";
+        QString ID=ui->recherche_par_id->text();
+        QString lieu=ui->recherche_par_lieu->text();
+        QString prix=ui->recherche_par_prix->text();
+        if(ID != NULL or lieu != NULL or prix !=NULL){
+            critaire = " where ";
+        }
+        if(ID != NULL){
+            critaire += " id="+ID;
+        }
+        if(lieu != NULL){
+            if(critaire != " where ")
+                critaire+= " and ";
+            critaire += " lieu='"+lieu+"'";
+        }
+        if(prix != NULL){
+            if(critaire != " where ")
+                critaire+= " and ";
+            critaire += " prix="+prix;
+        }
+requete+=critaire;
+return requete;
+}
+
+
+void honeymoonplus::execute(QString requete){
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery(requete);
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("lieu"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prix"));
+    ui->table_honeymoon->setModel(model);
+    ui->table_honeymoon->show();
 }

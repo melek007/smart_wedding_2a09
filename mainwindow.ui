@@ -2589,24 +2589,24 @@ QSlider::sub-page:horizontal:disabled {
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>60</y>
+      <y>40</y>
       <width>581</width>
-      <height>451</height>
+      <height>471</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
     <property name="title">
-     <string>gerer voiture et honeymoon</string>
+     <string>Gerer Voiture et Honeymoon</string>
     </property>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>80</y>
-       <width>181</width>
-       <height>91</height>
+       <x>100</x>
+       <y>90</y>
+       <width>401</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -2619,16 +2619,16 @@ QSlider::sub-page:horizontal:disabled {
 }</string>
      </property>
      <property name="text">
-      <string>gerer honeymoon</string>
+      <string>Gerer Honeymoon</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>250</y>
-       <width>181</width>
-       <height>91</height>
+       <x>100</x>
+       <y>160</y>
+       <width>401</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -2641,7 +2641,7 @@ QSlider::sub-page:horizontal:disabled {
 }</string>
      </property>
      <property name="text">
-      <string>gerer voiture</string>
+      <string>Gerer Voiture</string>
      </property>
     </widget>
    </widget>

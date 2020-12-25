@@ -36,6 +36,9 @@ private slots:
 
     void on_supprimer_honeymoon_clicked();
 
+    void execute(QString);
+
+    QString createRequete();
 private:
     Ui::honeymoonplus *ui;
     honeymoon tmphoneymoon;
