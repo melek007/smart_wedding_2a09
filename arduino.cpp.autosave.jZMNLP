@@ -1,0 +1,129 @@
+#include "arduino.h"
+
+#include <QDebug>
+
+arduino::arduino()
+
+{
+
+
+
+}
+
+int arduino::connect_arduino()
+
+{
+
+    foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts()){
+
+        //  check if the serialport has both a product identifier and a vendor identifier
+
+        if(serialPortInfo.hasProductIdentifier() && serialPortInfo.hasVendorIdentifier()){
+
+            //  check if the product ID and the vendor ID match those of the arduino uno
+
+            if((serialPortInfo.productIdentifier() == arduino_uno_product_id)
+
+                    && (serialPortInfo.vendorIdentifier() == arduino_uno_vendor_id)){
+
+                arduino_is_available = true; //    arduino uno is available on this port
+
+                arduino_port_name = serialPortInfo.portName();
+
+            }
+
+        }
+
+    }
+
+
+
+    //  Open and configure the arduino port if available
+
+
+
+    if(arduino_is_available)
+
+    {
+
+        serial->setPortName(arduino_port_name);
+
+        serial->open(QSerialPort::ReadOnly);
+
+        serial->setBaudRate(QSerialPort::Baud9600);
+
+        serial->setDataBits(QSerialPort::Data8);
+
+        serial->setFlowControl(QSerialPort::NoFlowControl);
+
+        serial->setParity(QSerialPort::NoParity);
+
+        serial->setStopBits(QSerialPort::OneStop);
+
+        serial->setFlowControl(QSerialPort::NoFlowControl);
+
+        return 0;
+
+    }
+
+    return 1;
+
+}
+
+int arduino::close_arduino()
+
+{
+
+    if(serial->isOpen())
+
+    {
+
+        serial->close();
+
+        return 0;
+
+    }
+
+    return 1;
+
+
+
+}
+
+QByteArray arduino::read_from_arduino()
+
+{
+
+    if(serial->isReadable())
+
+    {
+
+        data=serial->readAll();
+
+        return data;
+
+    }
+
+}
+
+int arduino::write_to_arduino(QByteArray d)
+
+{
+
+    if(serial->isWritable())
+
+    {
+
+        serial->write(d);
+
+    }
+
+    else
+
+    {
+
+        qDebug()<< "couldn't write to serial!";
+
+    }
+
+}

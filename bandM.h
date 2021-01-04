@@ -30,7 +30,7 @@ public:
             QSqlQueryModel * chercher(QString);
             QSqlQueryModel * cherchernom(QString);
             QSqlQueryModel * cherchermusic(QString);
-
+ int calculerm (QString);
 
 
 

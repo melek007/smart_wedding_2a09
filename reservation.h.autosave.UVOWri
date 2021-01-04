@@ -1,0 +1,30 @@
+#ifndef RESERVATION_H
+#define RESERVATION_H
+#include"QString"
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QDate>
+
+class reservation
+{
+public:
+    reservation();
+    reservation(int,QString,QString);
+      int getID_reservation();
+       QString getdate_reservation();
+        QString getdate_mariage();
+
+
+         void setID_reservation(int );
+         void setdate_reservation(QString );
+         void setdate_mariage(QString );
+         bool ajouter();
+         QSqlQueryModel * afficher();
+         bool supprimer(int);
+         bool modifier();
+   private:
+         QString date_mariage , date_reservation ;
+         int ID_reservation;
+};
+
+#endif // RESERVATION_H

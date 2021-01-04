@@ -17,24 +17,24 @@ drake::drake(int ID,QString nom ,QString prenom ,QString typechant,int prix )
 
 
  }
-   int drake:: getID(){return ID;}
+   int drake:: getIDsinger(){return ID;}
     QString drake:: getnom(){return nom;}
      QString drake:: getprenom(){return prenom;}
      QString drake:: gettypechant(){return typechant;}
      int drake:: getprix(){return prix;}
-     void drake:: setID(int ID ){this->ID=ID;}
+     void drake:: setIDsinger(int ID)  {this->ID=ID;}
      void drake:: setnom(QString nom){this->nom=nom;}
      void drake:: setprenom(QString prenom){this->prenom=prenom;}
      void drake:: settypechant(QString typechant){this->typechant=typechant;}
      void drake:: setprix(int prix ){this->prix=prix;}
 
 
-bool drake:: ajouter()
+bool drake:: ajoutersinger()
 {
      QSqlQuery query;
      QString id_string= QString::number(ID);
 
-            query.prepare("INSERT INTO chant (id, nom, prenom,type_de_chant,prix) "
+            query.prepare("INSERT INTO chant (id_chant, nom, prenom,type_de_chant,prix) "
                           "VALUES (:id, :forename, :surname, :typechant, :price)");
             query.bindValue(":id",id_string);
             query.bindValue(":forename", nom);
@@ -44,15 +44,15 @@ bool drake:: ajouter()
 
            return query.exec();}
 
-bool drake::supprimer(int id)
+bool drake::supprimersinger(int id)
 {
     QSqlQuery query;
     QString res= QString::number(id);
-    query.prepare(" Delete from chant where id=:id");
+    query.prepare(" Delete from chant where id_chant=:id");
     query.bindValue(":id", res);
 
         return query.exec();}
-QSqlQueryModel* drake::afficher()
+QSqlQueryModel* drake::affichersinger()
 {
   QSqlQueryModel* model=new QSqlQueryModel();
 
@@ -67,7 +67,7 @@ QSqlQueryModel* drake::afficher()
 
   return  model;
 }
-bool drake::modifier()
+bool drake::modifiersinger()
 {
 
         QSqlQuery query;
@@ -75,7 +75,7 @@ bool drake::modifier()
 
 
 
-       query.prepare(" UPDATE chant SET ID=:ID,nom=:nom_chanteur,prenom=:prenom_chanteur,type_de_chant=:typchant,prix=:prix_chanteur WHERE ID=:ID");
+       query.prepare(" UPDATE chant SET ID_chant=:ID,nom=:nom_chanteur,prenom=:prenom_chanteur,type_de_chant=:typchant,prix=:prix_chanteur WHERE ID_chant=:ID");
               query.bindValue(":ID", id_string);
               query.bindValue(":nom_chanteur",nom);
                  query.bindValue(":prenom_chanteur",prenom);
@@ -87,17 +87,17 @@ bool drake::modifier()
 
 
 }
-QSqlQueryModel * drake::trierID()
+QSqlQueryModel * drake::trierIDsinger()
 {
     QSqlQueryModel *model = new QSqlQueryModel();
-        model->setQuery("SELECT * from chant ORDER BY ID");
+        model->setQuery("SELECT * from chant ORDER BY ID_chant");
         model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identenfiant"));
         model->setHeaderData(1, Qt::Horizontal, QObject::tr("name"));
         model->setHeaderData(2, Qt::Horizontal, QObject::tr("surname"));
         model->setHeaderData(3, Qt::Horizontal, QObject::tr("sing_type"));
          model->setHeaderData(4, Qt::Horizontal, QObject::tr("price"));
                  return model ;}
-QSqlQueryModel * drake::triernom()
+QSqlQueryModel * drake::triernomsinger()
 {
     QSqlQueryModel *model = new QSqlQueryModel();
         model->setQuery("SELECT * from chant ORDER BY nom");
@@ -109,7 +109,7 @@ QSqlQueryModel * drake::triernom()
 
         return model ;}
 
-QSqlQueryModel * drake::trierprix()
+QSqlQueryModel * drake::trierprixsinger()
 {
     QSqlQueryModel *model = new QSqlQueryModel();
         model->setQuery("SELECT * from chant ORDER BY prix");
@@ -120,7 +120,7 @@ QSqlQueryModel * drake::trierprix()
          model->setHeaderData(4, Qt::Horizontal, QObject::tr("price"));
         return model ;}
 
-QSqlQueryModel * drake::chercher(QString typechant)
+QSqlQueryModel * drake::cherchersinger(QString typechant)
 {
     QSqlQueryModel *model = new QSqlQueryModel();
         model->setQuery("SELECT * from chant where type_de_chant ='"+typechant+"'");
@@ -132,7 +132,7 @@ QSqlQueryModel * drake::chercher(QString typechant)
         return model ;
 }
 
-QSqlQueryModel * drake::cherchernom(QString nom)
+QSqlQueryModel * drake::cherchernomsinger(QString nom)
 {
     QSqlQueryModel *model = new QSqlQueryModel();
         model->setQuery("SELECT * from chant where nom ='"+nom+"'");
@@ -144,7 +144,7 @@ QSqlQueryModel * drake::cherchernom(QString nom)
         return model ;
 }
 
-QSqlQueryModel * drake::chercherprix(int prix)
+QSqlQueryModel * drake::chercherprixsinger(int prix)
 {
     QSqlQueryModel *model = new QSqlQueryModel();
     QString code=QString::number(prix);
@@ -156,5 +156,17 @@ QSqlQueryModel * drake::chercherprix(int prix)
         model->setHeaderData(4, Qt::Horizontal, QObject::tr("price"));
         return model ;
 }
+int drake::calculer(QString typechant) {
+  QSqlQuery query;
+  query.prepare("select * from chant where type_de_chant = :typechant");
+  query.bindValue(":typechant", typechant);
 
+  query.exec();
+  int total = 0;
+  while (query.next()) {
+    total++;
+  }
+
+  return total;
+}
 

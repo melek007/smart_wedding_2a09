@@ -1,4 +1,4 @@
-QT       += core gui sql printsupport multimedia serialport charts
+QT       += core gui sql printsupport multimedia serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,51 +18,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     bandM.cpp \
     cameraman.cpp \
-    clothes.cpp \
     compte.cpp \
     connexion_base.cpp \
-    honeymoon.cpp \
-    location_voiture.cpp \
     main.cpp \
     mainwindow.cpp \
-    personnel.cpp \
     reservation.cpp \
-    salle.cpp \
+    reservationm.cpp \
     singerM.cpp \
-    statistiques.cpp \
-    statsband.cpp \
     the_band.cpp \
-    theme.cpp \
-    traiteur.cpp \
-    vip_wedding.cpp \
-    voiture.cpp
+    traiteur.cpp
 
 HEADERS += \
     arduino.h \
     bandM.h \
     cameraman.h \
-    clothes.h \
     compte.h \
     connexion_base.h \
-    honeymoon.h \
-    location_voiture.h \
     mainwindow.h \
-    personnel.h \
     reservation.h \
-    salle.h \
+    reservationm.h \
     singerM.h \
-    statistiques.h \
-    statsband.h \
     the_band.h \
-    theme.h \
-    traiteur.h \
-    vip_wedding.h \
-    voiture.h
+    traiteur.h
 
 FORMS += \
     mainwindow.ui \
-    statistiques.ui \
-    statsband.ui \
+    reservationm.ui \
     the_band.ui
 
 # Default rules for deployment.

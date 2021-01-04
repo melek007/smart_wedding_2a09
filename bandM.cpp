@@ -160,4 +160,17 @@ this->ID=ID; this->nom=nom; this->adresse=adresse; this->typemusic=typemusic;thi
               model->setHeaderData(4, Qt::Horizontal, QObject::tr("price"));
               return model ;
       }
+      int boudinar::calculerm(QString typemusic) {
+        QSqlQuery query;
+        query.prepare("select * from boudinar where type_music = :typechant");
+        query.bindValue(":typechant", typemusic);
+
+        query.exec();
+        int total = 0;
+        while (query.next()) {
+          total++;
+        }
+
+        return total;
+      }
 

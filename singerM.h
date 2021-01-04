@@ -9,29 +9,29 @@ class drake
 public:
     drake();
     drake(int,QString,QString,QString,int);
-       int getID();
+       int getIDsinger();
         QString getnom();
          QString getprenom();
           QString gettypechant();
           int getprix();
 
 
-          void setID(int );
+          void setIDsinger(int );
           void setnom(QString );
           void setprenom(QString );
           void settypechant(QString );
           void setprix(int );
-          bool ajouter();
-          QSqlQueryModel * afficher();
-          bool supprimer(int);
-          bool modifier();
-          QSqlQueryModel * trierID();
-            QSqlQueryModel * triernom();
-            QSqlQueryModel * trierprix();
-            QSqlQueryModel * chercher(QString);
-            QSqlQueryModel * cherchernom(QString);
-            QSqlQueryModel * chercherprix(int);
-
+          bool ajoutersinger();
+          QSqlQueryModel * affichersinger();
+          bool supprimersinger(int);
+          bool modifiersinger();
+          QSqlQueryModel * trierIDsinger();
+            QSqlQueryModel * triernomsinger();
+            QSqlQueryModel * trierprixsinger();
+            QSqlQueryModel * cherchersinger(QString);
+            QSqlQueryModel * cherchernomsinger(QString);
+            QSqlQueryModel * chercherprixsinger(int);
+         int calculer(QString);
 
     private:
           QString typechant , nom, prenom;
