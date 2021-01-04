@@ -14,16 +14,12 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-
-
-        Light  #4D545B #505F69 (unpressed)
-
-        Normal #31363B #32414B (border, disabled, pressed, checked, toolbars, menus)
-
-        Dark   #232629 #19232D (background)
-
-</string>
+   <string notr="true">MyDialog::title {
+    height: 24px;
+    font-weight: bold;
+    color: #000000;
+    background: #ffffff;
+}</string>
   </property>
   <widget class="QTabWidget" name="honeymoon">
    <property name="geometry">
@@ -70,6 +66,11 @@ QTabBar::tab:selected {
 
 QTabBar::tab:!selected {
     margin-top: 2px; /* make non-selected tabs look smaller */
+}MyDialog::title {
+    height: 24px;
+    font-weight: bold;
+    color: #000000;
+    background: #ffffff;
 }</string>
    </property>
    <property name="currentIndex">
@@ -128,13 +129,16 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_lieu1">
@@ -147,13 +151,16 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_prix1">
@@ -166,13 +173,16 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QPushButton" name="ajouter_honeymoon">
@@ -200,7 +210,13 @@ QTabBar::tab:!selected {
   outline: none;
 
 }
-
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}
 </string>
      </property>
      <property name="text">
@@ -232,7 +248,13 @@ QTabBar::tab:!selected {
   outline: none;
 
 }
-
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}
 </string>
      </property>
      <property name="text">
@@ -262,13 +284,16 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
    </widget>
@@ -281,9 +306,15 @@ QTabBar::tab:!selected {
       <rect>
        <x>80</x>
        <y>180</y>
-       <width>691</width>
-       <height>301</height>
+       <width>721</width>
+       <height>381</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableView QTableCornerButton::section {
+    background: red;
+    border: 2px outset red;
+}</string>
      </property>
     </widget>
     <widget class="QPushButton" name="tri_par_lieu">
@@ -312,7 +343,13 @@ QTabBar::tab:!selected {
 
 }
 
-</string>
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}</string>
      </property>
      <property name="text">
       <string>Tri par lieu</string>
@@ -343,7 +380,13 @@ QTabBar::tab:!selected {
   outline: none;
 
 }
-
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}
 </string>
      </property>
      <property name="text">
@@ -401,7 +444,13 @@ QTabBar::tab:!selected {
   outline: none;
 
 }
-
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}
 </string>
      </property>
      <property name="text">
@@ -433,7 +482,13 @@ QTabBar::tab:!selected {
   outline: none;
 
 }
-
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}
 </string>
      </property>
      <property name="text">
@@ -449,6 +504,12 @@ QTabBar::tab:!selected {
        <height>22</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color : none;
+border-color: rgb(170, 0, 0);
+border-width : 2px;
+border-style:solid</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="recherche_par_id">
      <property name="geometry">
@@ -458,6 +519,12 @@ QTabBar::tab:!selected {
        <width>113</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color : none;
+border-color: rgb(170, 0, 0);
+border-width : 2px;
+border-style:solid</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_24">
@@ -481,6 +548,88 @@ QTabBar::tab:!selected {
        <width>113</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color : none;
+border-color: rgb(170, 0, 0);
+border-width : 2px;
+border-style:solid</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="refresh_honeymoon">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>220</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Refresh</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="imprimer_honeymoon">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>260</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+
+  background-color: #505F69;
+
+  border: 1px solid #32414B;
+
+  color: #F0F0F0;
+
+  border-radius: 4px;
+
+  padding: 3px;
+
+  outline: none;
+
+}
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Imprimer</string>
      </property>
     </widget>
    </widget>
@@ -511,13 +660,16 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
@@ -556,13 +708,16 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="prix_edit_supp">
@@ -575,13 +730,16 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QPushButton" name="modifier1">
@@ -610,7 +768,13 @@ QTabBar::tab:!selected {
 
 }
 
-</string>
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}</string>
      </property>
      <property name="text">
       <string>Modifier</string>
@@ -626,13 +790,16 @@ QTabBar::tab:!selected {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLineEdit {
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 0 8px;
-    background: yellow;
-    selection-background-color: darkgray;
-}</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_8">
@@ -673,7 +840,13 @@ QTabBar::tab:!selected {
   outline: none;
 
 }
-
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}
 </string>
      </property>
      <property name="text">
@@ -706,7 +879,13 @@ QTabBar::tab:!selected {
 
 }
 
-</string>
+QPushButton
+{
+  color: white;
+  background-color: #27a9e3;
+  border-width: 0px;
+  border-radius: 3px;
+}</string>
      </property>
      <property name="text">
       <string>Supprimer</string>

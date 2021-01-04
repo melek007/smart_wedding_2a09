@@ -3,6 +3,10 @@
 #include"honeymoon.h"
 #include <QMessageBox>
 #include <QIntValidator>
+#include <QMediaPlayer>
+#include <QPrinter>
+#include <QPainter>
+#include <QPrintDialog>
 
 honeymoonplus::honeymoonplus(QWidget *parent) :
     QDialog(parent),
@@ -20,6 +24,9 @@ honeymoonplus::~honeymoonplus()
 
 void honeymoonplus::on_ajouter_honeymoon_clicked()
 {QMessageBox msgBox;
+    QMediaPlayer * music =new QMediaPlayer;
+     music->setMedia(QUrl("qrc:/Aniss/clic/clic.mp3")) ;
+     music->play();
 
         int id=ui->lineEdit_ID0->text().toInt();
             QString lieu=ui->lineEdit_lieu1->text();
@@ -66,7 +73,9 @@ void honeymoonplus::on_ajouter_honeymoon_clicked()
 
 
 void honeymoonplus::on_modifier1_clicked()
-{
+{ QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/Aniss/clic/clic.mp3")) ;
+    music->play();
 
             int ID=ui->id_edit_supp->text().toInt();
             QString lieu=ui->lieu_edit_supp->text();
@@ -98,7 +107,9 @@ void honeymoonplus::on_modifier1_clicked()
 
 void honeymoonplus::on_get_data_by_id_clicked()
 {
-    {
+    { QMediaPlayer * music =new QMediaPlayer;
+        music->setMedia(QUrl("qrc:/Aniss/clic/clic.mp3")) ;
+        music->play();
         QMessageBox msgBox;
         honeymoon E1;
         QString honey = ui->id_edit_supp->text();
@@ -120,7 +131,9 @@ void honeymoonplus::on_get_data_by_id_clicked()
 }
 
 void honeymoonplus::on_reinitialisation_clicked()
-{
+{ QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/Aniss/clic/clic.mp3")) ;
+    music->play();
     ui->lineEdit_ID0->setText("");
     ui->lineEdit_lieu1->setText("");
     ui->lineEdit_nomhotel_2->setText("");
@@ -128,7 +141,9 @@ void honeymoonplus::on_reinitialisation_clicked()
 }
 
 void honeymoonplus::on_supprimer_honeymoon_clicked()
-{
+{ QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/Aniss/clic/clic.mp3")) ;
+    music->play();
 
     QMessageBox msgBox;
     honeymoon E1;
@@ -153,7 +168,9 @@ void honeymoonplus::on_supprimer_honeymoon_clicked()
 }
 
 void honeymoonplus::on_tri_par_id_clicked()
-{
+{ QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
 
     QString requete = createRequete();
     requete+= " order by ID ASC";
@@ -162,27 +179,33 @@ void honeymoonplus::on_tri_par_id_clicked()
 
 void honeymoonplus::on_tri_par_lieu_clicked()
 {
-
+    QMediaPlayer * music =new QMediaPlayer;
+     music->setMedia(QUrl("qrc:/Aniss/clic/clic.mp3")) ;
+     music->play();
     QString requete = createRequete();
     requete+= " order by lieu ASC";
         execute(requete);
 }
 
 void honeymoonplus::on_tri_par_prix_clicked()
-{
+{ QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/Aniss/clic/clic.mp3")) ;
+    music->play();
 
     QString requete = createRequete();
     requete+= " order by prix ASC";
         execute(requete);
 }
 void honeymoonplus::on_recherche_honeymoon_clicked()
-{
+{ QMediaPlayer * music =new QMediaPlayer;
+    music->setMedia(QUrl("qrc:/sounds/wave.mp3")) ;
+    music->play();
 QString requete = createRequete();
 execute(requete);
 }
 QString honeymoonplus::createRequete(){
 
-    QString requete="SELECT ID,lieu,prix FROM honeymoon";
+    QString requete="SELECT ID,lieu,prix,nom_hotel FROM honeymoon";
     QString critaire = "";
         QString ID=ui->recherche_par_id->text();
         QString lieu=ui->recherche_par_lieu->text();
@@ -211,9 +234,48 @@ return requete;
 void honeymoonplus::execute(QString requete){
     QSqlQueryModel *model = new QSqlQueryModel();
     model->setQuery(requete);
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("id"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("lieu"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("prix"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Lieu"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prix"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Nom hotel"));
     ui->table_honeymoon->setModel(model);
     ui->table_honeymoon->show();
+}
+
+void honeymoonplus::on_refresh_honeymoon_clicked()
+{
+    QString requete = createRequete();
+    execute(requete);
+
+}
+
+
+void honeymoonplus::on_imprimer_honeymoon_clicked()
+{
+    QPrinter *printer = new QPrinter(QPrinter::HighResolution);
+           printer->setOutputFormat(QPrinter::NativeFormat);
+           printer->setPageSize(QPrinter::A4);
+           printer->setOrientation(QPrinter::Portrait);
+           printer->setFullPage(true);
+
+
+       QPrintDialog *printDialog = new QPrintDialog(printer,this);
+       printDialog->setWindowTitle("Impression PDF");
+       if(printDialog->exec())
+       {
+          QPainter painter;
+          if(painter.begin(printer))
+          {
+              double xscale = double(ui->table_honeymoon->width() / 65);
+              double yscale = double(ui->table_honeymoon->height() / 65);
+              painter.scale(xscale, yscale);
+              ui->table_honeymoon->render(&painter);
+              painter.end();
+          }
+          else
+          {
+              qWarning("failed to open file");
+             QMessageBox::warning(nullptr,QObject::tr("Erreur de generation PDF"),QObject::tr("click cancel to exit!"),QMessageBox::Cancel);
+          }
+       }
 }

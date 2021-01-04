@@ -39,6 +39,11 @@ private slots:
     void execute(QString);
 
     QString createRequete();
+    void on_refresh_honeymoon_clicked();
+
+
+    void on_imprimer_honeymoon_clicked();
+
 private:
     Ui::honeymoonplus *ui;
     honeymoon tmphoneymoon;

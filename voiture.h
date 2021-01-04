@@ -40,6 +40,11 @@ private slots:
 
     QString createRequete();
 
+
+    void on_refresh_clicked();
+
+    void on_imprimer_clicked();
+
 private:
     Ui::voiture *ui;
     voitureplus tmpvoitureplus;

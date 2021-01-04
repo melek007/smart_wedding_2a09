@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+#include<QPropertyAnimation>
 namespace Ui {
 class MainWindow;
 }
@@ -23,6 +24,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+     QPropertyAnimation *animation;
 };
 
 #endif // MAINWINDOW_H
