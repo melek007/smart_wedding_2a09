@@ -26,19 +26,13 @@
 #include <QPrintDialog>
 #include<QtSql/QSqlQuery>
 #include<QVariant>
-
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+#include"arduino.h"
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
-    animation = new QPropertyAnimation(ui->heart, "geometry");
-                animation->setDuration(9000);
-                animation->setStartValue(ui->heart->geometry());
-                animation->setEndValue(QRect(200,450,100,50));
-                animation->start();
+ui->setupUi(this);
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;

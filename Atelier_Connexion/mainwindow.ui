@@ -24,14 +24,106 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 italic 11pt &quot;Times New Roman&quot;;
-color: rgb(192, 137, 255);</string>
+     <string notr="true">QTabWidget::pane {
+    border: 1px solid black;
+    background: rgb(183, 255, 233);
+}
+
+QTabWidget::tab-bar:top {
+    top: 1px;
+}
+
+QTabWidget::tab-bar:bottom {
+    bottom: 1px;
+}
+
+QTabWidget::tab-bar:left {
+    right: 1px;
+}
+
+QTabWidget::tab-bar:right {
+    left: 1px;
+}
+
+QTabBar::tab {
+    border: 1px solid black;
+}
+
+QTabBar::tab:selected {
+   color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+}
+
+QTabBar::tab:!selected {
+    background: silver;
+}
+
+QTabBar::tab:!selected:hover {
+    background: #999;
+}
+
+QTabBar::tab:top:!selected {
+    margin-top: 3px;
+}
+
+QTabBar::tab:bottom:!selected {
+    margin-bottom: 3px;
+}
+
+QTabBar::tab:top, QTabBar::tab:bottom {
+    min-width: 8ex;
+    margin-right: -1px;
+    padding: 5px 10px 5px 10px;
+}
+
+QTabBar::tab:top:selected {
+    border-bottom-color: none;
+}
+
+QTabBar::tab:bottom:selected {
+    border-top-color: none;
+}
+
+QTabBar::tab:top:last, QTabBar::tab:bottom:last,
+QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one {
+    margin-right: 0;
+}
+
+QTabBar::tab:left:!selected {
+    margin-right: 3px;
+}
+
+QTabBar::tab:right:!selected {
+    margin-left: 3px;
+}
+
+QTabBar::tab:left, QTabBar::tab:right {
+    min-height: 8ex;
+    margin-bottom: -1px;
+    padding: 10px 5px 10px 5px;
+}
+
+QTabBar::tab:left:selected {
+    border-left-color: none;
+}
+
+QTabBar::tab:right:selected {
+    border-right-color: blue;
+}
+
+QTabBar::tab:left:last, QTabBar::tab:right:last,
+QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
+    margin-bottom: 0;
+}</string>
     </property>
     <property name="tabPosition">
      <enum>QTabWidget::North</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Espace_Traiteur">
      <attribute name="title">
@@ -47,11 +139,104 @@ color: rgb(192, 137, 255);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 75 italic 11pt &quot;Times New Roman&quot;;
-color: rgb(160, 170, 117);</string>
+       <string notr="true">/*font: 75 italic 11pt &quot;Times New Roman&quot;;
+color: rgb(160, 170, 117);*/
+QTabWidget::pane {
+    border: 1px solid black;
+    background: rgb(183, 255, 233);
+}
+
+QTabWidget::tab-bar:top {
+    top: 1px;
+}
+
+QTabWidget::tab-bar:bottom {
+    bottom: 1px;
+}
+
+QTabWidget::tab-bar:left {
+    right: 1px;
+}
+
+QTabWidget::tab-bar:right {
+    left: 1px;
+}
+QTabBar::tab {
+    border: 1px solid black;
+}
+
+QTabBar::tab:selected {
+   color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+}
+
+QTabBar::tab:!selected {
+    background: silver;
+}
+
+QTabBar::tab:!selected:hover {
+    background: #999;
+}
+
+QTabBar::tab:top:!selected {
+    margin-top: 3px;
+}
+
+QTabBar::tab:bottom:!selected {
+    margin-bottom: 3px;
+}
+
+QTabBar::tab:top, QTabBar::tab:bottom {
+    min-width: 8ex;
+    margin-right: -1px;
+    padding: 5px 10px 5px 10px;
+}
+
+QTabBar::tab:top:selected {
+    border-bottom-color: none;
+}
+
+QTabBar::tab:bottom:selected {
+    border-top-color: none;
+}
+
+QTabBar::tab:top:last, QTabBar::tab:bottom:last,
+QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one {
+    margin-right: 0;
+}
+
+QTabBar::tab:left:!selected {
+    margin-right: 3px;
+}
+
+QTabBar::tab:right:!selected {
+    margin-left: 3px;
+}
+
+QTabBar::tab:left, QTabBar::tab:right {
+    min-height: 8ex;
+    margin-bottom: -1px;
+    padding: 10px 5px 10px 5px;
+}
+
+QTabBar::tab:left:selected {
+    border-left-color: none;
+}
+
+QTabBar::tab:right:selected {
+    border-right-color: blue;
+}
+
+QTabBar::tab:left:last, QTabBar::tab:right:last,
+QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
+    margin-bottom: 0;
+}</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Ajouter_Traiteur">
        <attribute name="title">
@@ -66,6 +251,14 @@ color: rgb(160, 170, 117);</string>
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -79,6 +272,14 @@ color: rgb(160, 170, 117);</string>
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
        </widget>
        <widget class="QLineEdit" name="le_prix">
         <property name="geometry">
@@ -88,6 +289,14 @@ color: rgb(160, 170, 117);</string>
           <width>141</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="le_nom">
@@ -99,19 +308,26 @@ color: rgb(160, 170, 117);</string>
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
        </widget>
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>30</y>
-          <width>61</width>
-          <height>16</height>
+          <width>81</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>ID Traiteur:</string>
@@ -122,13 +338,12 @@ color: rgb(0, 0, 0);</string>
          <rect>
           <x>0</x>
           <y>70</y>
-          <width>81</width>
+          <width>101</width>
           <height>16</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string> nom Traiteur:</string>
@@ -144,8 +359,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Adresse :</string>
@@ -161,8 +375,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Prix_location :</string>
@@ -180,28 +393,18 @@ color: rgb(0, 0, 0);</string>
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -220,28 +423,18 @@ QPushButton:focus
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -282,8 +475,21 @@ QPushButton:focus
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+         <string notr="true">QPushButton
+{
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+
+}
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}</string>
         </property>
         <property name="text">
          <string>Quitter</string>
@@ -299,7 +505,7 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton
+         <string notr="true">/*QPushButton
 {
 	background: transparent;
 	border-style:solid;
@@ -315,7 +521,7 @@ QPushButton:hover
 {
 	background-color: #00000000;
 	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
+	/*color:rgb(30, 227, 0);
 }
 
 QPushButton:focus
@@ -323,6 +529,26 @@ QPushButton:focus
 	background-color:  rgb(30, 227, 0);
 	border-color: rgba(30, 227, 0,0);
 	color:rgb(255, 255, 255);
+}*/
+QTabWidget::pane {
+    border: 1px solid black;
+    background: rgb(183, 255, 233);
+}
+
+QTabWidget::tab-bar:top {
+    top: 1px;
+}
+
+QTabWidget::tab-bar:bottom {
+    bottom: 1px;
+}
+
+QTabWidget::tab-bar:left {
+    right: 1px;
+}
+
+QTabWidget::tab-bar:right {
+    left: 1px;
 }</string>
         </property>
         <property name="title">
@@ -347,6 +573,14 @@ QPushButton:focus
            <height>20</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+         </property>
         </widget>
         <widget class="QPushButton" name="pushButton">
          <property name="geometry">
@@ -358,8 +592,21 @@ QPushButton:focus
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(0, 0, 0);
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">QPushButton
+{
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+
+}
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}</string>
          </property>
          <property name="text">
           <string>Rechercher</string>
@@ -375,7 +622,21 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(9, 9, 9);</string>
+          <string notr="true">QPushButton
+{
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+
+}
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}</string>
          </property>
          <property name="text">
           <string>TRIER</string>
@@ -389,6 +650,15 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
            <width>71</width>
            <height>22</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+}</string>
          </property>
          <item>
           <property name="text">
@@ -415,6 +685,23 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
            <height>23</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+
+}
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}</string>
+         </property>
          <property name="text">
           <string>imprimer</string>
          </property>
@@ -427,6 +714,23 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
            <width>81</width>
            <height>23</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+
+}
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}</string>
          </property>
          <property name="text">
           <string>PDF</string>
@@ -441,15 +745,14 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
-          <x>40</x>
+          <x>20</x>
           <y>60</y>
-          <width>61</width>
-          <height>16</height>
+          <width>81</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>ID Traiteur :</string>
@@ -463,6 +766,14 @@ color: rgb(0, 0, 0);</string>
           <width>141</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -480,28 +791,18 @@ color: rgb(0, 0, 0);</string>
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -522,6 +823,14 @@ QPushButton:focus
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -534,6 +843,14 @@ QPushButton:focus
           <width>141</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -548,6 +865,14 @@ QPushButton:focus
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -555,15 +880,14 @@ QPushButton:focus
        <widget class="QLabel" name="label_8">
         <property name="geometry">
          <rect>
-          <x>120</x>
+          <x>90</x>
           <y>130</y>
-          <width>81</width>
+          <width>101</width>
           <height>16</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string> nom Traiteur :</string>
@@ -579,8 +903,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Adresse :</string>
@@ -596,8 +919,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Prix :</string>
@@ -615,28 +937,18 @@ color: rgb(0, 0, 0);</string>
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -664,13 +976,12 @@ font: italic 8pt &quot;MS Sans Serif&quot;;</string>
           <rect>
            <x>20</x>
            <y>30</y>
-           <width>61</width>
+           <width>101</width>
            <height>16</height>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+          <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
          </property>
          <property name="text">
           <string>ID Traiteur :</string>
@@ -684,6 +995,14 @@ color: rgb(0, 0, 0);</string>
            <width>141</width>
            <height>21</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -701,14 +1020,106 @@ color: rgb(0, 0, 0);</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>30</y>
+        <y>0</y>
         <width>751</width>
         <height>331</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 75 italic 11pt &quot;Times New Roman&quot;;
-color: rgb(160, 170, 117);</string>
+       <string notr="true">QTabWidget::pane {
+    border: 1px solid black;
+    background: rgb(183, 255, 233);
+}
+
+QTabWidget::tab-bar:top {
+    top: 1px;
+}
+
+QTabWidget::tab-bar:bottom {
+    bottom: 1px;
+}
+
+QTabWidget::tab-bar:left {
+    right: 1px;
+}
+
+QTabWidget::tab-bar:right {
+    left: 1px;
+}
+
+QTabBar::tab {
+    border: 1px solid black;
+}
+
+QTabBar::tab:selected {
+   color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+}
+
+QTabBar::tab:!selected {
+    background: silver;
+}
+
+QTabBar::tab:!selected:hover {
+    background: #999;
+}
+
+QTabBar::tab:top:!selected {
+    margin-top: 3px;
+}
+
+QTabBar::tab:bottom:!selected {
+    margin-bottom: 3px;
+}
+
+QTabBar::tab:top, QTabBar::tab:bottom {
+    min-width: 8ex;
+    margin-right: -1px;
+    padding: 5px 10px 5px 10px;
+}
+
+QTabBar::tab:top:selected {
+    border-bottom-color: none;
+}
+
+QTabBar::tab:bottom:selected {
+    border-top-color: none;
+}
+
+QTabBar::tab:top:last, QTabBar::tab:bottom:last,
+QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one {
+    margin-right: 0;
+}
+
+QTabBar::tab:left:!selected {
+    margin-right: 3px;
+}
+
+QTabBar::tab:right:!selected {
+    margin-left: 3px;
+}
+
+QTabBar::tab:left, QTabBar::tab:right {
+    min-height: 8ex;
+    margin-bottom: -1px;
+    padding: 10px 5px 10px 5px;
+}
+
+QTabBar::tab:left:selected {
+    border-left-color: none;
+}
+
+QTabBar::tab:right:selected {
+    border-right-color: blue;
+}
+
+QTabBar::tab:left:last, QTabBar::tab:right:last,
+QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {
+    margin-bottom: 0;
+}</string>
       </property>
       <property name="currentIndex">
        <number>1</number>
@@ -726,6 +1137,14 @@ color: rgb(160, 170, 117);</string>
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -738,6 +1157,14 @@ color: rgb(160, 170, 117);</string>
           <width>141</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -752,6 +1179,14 @@ color: rgb(160, 170, 117);</string>
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -759,15 +1194,14 @@ color: rgb(160, 170, 117);</string>
        <widget class="QLabel" name="label_14">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>10</x>
           <y>30</y>
           <width>101</width>
           <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>ID Cameraman :</string>
@@ -783,8 +1217,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Nom Cameraman :</string>
@@ -793,15 +1226,14 @@ color: rgb(0, 0, 0);</string>
        <widget class="QLabel" name="label_16">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>10</x>
           <y>110</y>
           <width>101</width>
           <height>20</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Nom Theme :</string>
@@ -815,6 +1247,14 @@ color: rgb(0, 0, 0);</string>
           <width>141</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -830,8 +1270,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Prix :</string>
@@ -849,28 +1288,18 @@ color: rgb(0, 0, 0);</string>
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -889,28 +1318,18 @@ QPushButton:focus
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -926,6 +1345,14 @@ QPushButton:focus
           <height>21</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -940,8 +1367,7 @@ QPushButton:focus
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Adresse :</string>
@@ -987,6 +1413,14 @@ font: italic 8pt &quot;MS Sans Serif&quot;;</string>
            <height>20</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+         </property>
         </widget>
         <widget class="QPushButton" name="pushButton_3">
          <property name="geometry">
@@ -1000,28 +1434,18 @@ font: italic 8pt &quot;MS Sans Serif&quot;;</string>
          <property name="styleSheet">
           <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
          </property>
          <property name="text">
@@ -1040,28 +1464,18 @@ QPushButton:focus
          <property name="styleSheet">
           <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
          </property>
          <property name="text">
@@ -1076,6 +1490,15 @@ QPushButton:focus
            <width>62</width>
            <height>22</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox {
+color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+}</string>
          </property>
          <item>
           <property name="text">
@@ -1105,28 +1528,18 @@ QPushButton:focus
          <property name="styleSheet">
           <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
          </property>
          <property name="text">
@@ -1145,28 +1558,18 @@ QPushButton:focus
          <property name="styleSheet">
           <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
          </property>
          <property name="text">
@@ -1184,8 +1587,21 @@ QPushButton:focus
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+         <string notr="true">QPushButton
+{
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
+
+}
+QPushButton:pressed
+{
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
+}</string>
         </property>
         <property name="text">
          <string>Quitter</string>
@@ -1206,8 +1622,7 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>ID Cameraman :</string>
@@ -1221,6 +1636,14 @@ color: rgb(0, 0, 0);</string>
           <width>141</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -1238,28 +1661,18 @@ color: rgb(0, 0, 0);</string>
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -1281,8 +1694,7 @@ QPushButton:focus
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Nom Cameraman :</string>
@@ -1298,8 +1710,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Nom Theme :</string>
@@ -1315,8 +1726,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Prix :</string>
@@ -1331,6 +1741,14 @@ color: rgb(0, 0, 0);</string>
           <height>31</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -1344,6 +1762,14 @@ color: rgb(0, 0, 0);</string>
           <height>31</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -1356,6 +1782,14 @@ color: rgb(0, 0, 0);</string>
           <width>141</width>
           <height>31</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
         </property>
         <property name="text">
          <string/>
@@ -1373,28 +1807,18 @@ color: rgb(0, 0, 0);</string>
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -1413,28 +1837,18 @@ QPushButton:focus
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background: transparent;
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:rgb(0,0,0);
-	font-size:16px;
-font-family:Calibri;
-}
+ color: white;
+background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);
+border-width: 1px;
+border-color: #339;
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+border-style: solid;
+font: 11pt &quot;MS Shell Dlg 2&quot;;
 
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
 }
-
-QPushButton:focus
+QPushButton:pressed
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);
 }</string>
         </property>
         <property name="text">
@@ -1467,8 +1881,7 @@ font: italic 8pt &quot;MS Sans Serif&quot;;</string>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+          <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
          </property>
          <property name="text">
           <string>ID Cameraman:</string>
@@ -1482,6 +1895,14 @@ color: rgb(0, 0, 0);</string>
            <width>141</width>
            <height>21</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
          </property>
          <property name="text">
           <string/>
@@ -1497,6 +1918,14 @@ color: rgb(0, 0, 0);</string>
           <height>31</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid gray;
+border-radius: 70pxt;
+background: white;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -1511,8 +1940,7 @@ color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(0, 0, 0);</string>
+         <string notr="true">QLabel{font: 11pt &quot;MS Shell Dlg 2&quot;;}</string>
         </property>
         <property name="text">
          <string>Adresse cameraman</string>

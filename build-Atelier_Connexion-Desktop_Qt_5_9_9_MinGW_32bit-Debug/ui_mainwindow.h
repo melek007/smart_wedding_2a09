@@ -131,105 +131,293 @@ public:
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setGeometry(QRect(0, 10, 801, 411));
-        tabWidget->setStyleSheet(QLatin1String("font: 75 italic 11pt \"Times New Roman\";\n"
-"color: rgb(192, 137, 255);"));
+        tabWidget->setStyleSheet(QLatin1String("QTabWidget::pane {\n"
+"    border: 1px solid black;\n"
+"    background: rgb(183, 255, 233);\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:top {\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:bottom {\n"
+"    bottom: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:left {\n"
+"    right: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:right {\n"
+"    left: 1px;\n"
+"}\n"
+"\n"
+"QTabBar::tab {\n"
+"    border: 1px solid black;\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"   color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"border-style: solid;\n"
+"}\n"
+"\n"
+"QTabBar::tab:!selected {\n"
+"    background: silver;\n"
+"}\n"
+"\n"
+"QTabBar::tab:!selected:hover {\n"
+"    background: #999;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:!selected {\n"
+"    margin-top: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:bottom:!selected {\n"
+"    margin-bottom: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top, QTabBar::tab:bottom {\n"
+"    min-width: 8ex;\n"
+"    margin-r"
+                        "ight: -1px;\n"
+"    padding: 5px 10px 5px 10px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:selected {\n"
+"    border-bottom-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:bottom:selected {\n"
+"    border-top-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:last, QTabBar::tab:bottom:last,\n"
+"QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one {\n"
+"    margin-right: 0;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:!selected {\n"
+"    margin-right: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:right:!selected {\n"
+"    margin-left: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left, QTabBar::tab:right {\n"
+"    min-height: 8ex;\n"
+"    margin-bottom: -1px;\n"
+"    padding: 10px 5px 10px 5px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:selected {\n"
+"    border-left-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:right:selected {\n"
+"    border-right-color: blue;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:last, QTabBar::tab:right:last,\n"
+"QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {\n"
+"    margin-bottom: 0;\n"
+"}"));
         tabWidget->setTabPosition(QTabWidget::North);
         Espace_Traiteur = new QWidget();
         Espace_Traiteur->setObjectName(QStringLiteral("Espace_Traiteur"));
         tabWidget_2 = new QTabWidget(Espace_Traiteur);
         tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
         tabWidget_2->setGeometry(QRect(0, 0, 731, 381));
-        tabWidget_2->setStyleSheet(QLatin1String("font: 75 italic 11pt \"Times New Roman\";\n"
-"color: rgb(160, 170, 117);"));
+        tabWidget_2->setStyleSheet(QLatin1String("/*font: 75 italic 11pt \"Times New Roman\";\n"
+"color: rgb(160, 170, 117);*/\n"
+"QTabWidget::pane {\n"
+"    border: 1px solid black;\n"
+"    background: rgb(183, 255, 233);\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:top {\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:bottom {\n"
+"    bottom: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:left {\n"
+"    right: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:right {\n"
+"    left: 1px;\n"
+"}\n"
+"QTabBar::tab {\n"
+"    border: 1px solid black;\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"   color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"border-style: solid;\n"
+"}\n"
+"\n"
+"QTabBar::tab:!selected {\n"
+"    background: silver;\n"
+"}\n"
+"\n"
+"QTabBar::tab:!selected:hover {\n"
+"    background: #999;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:!selected {\n"
+"    margin-top: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:bottom:!selected {\n"
+"    margin-bottom: 3px;\n"
+"}\n"
+"\n"
+"QTab"
+                        "Bar::tab:top, QTabBar::tab:bottom {\n"
+"    min-width: 8ex;\n"
+"    margin-right: -1px;\n"
+"    padding: 5px 10px 5px 10px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:selected {\n"
+"    border-bottom-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:bottom:selected {\n"
+"    border-top-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:last, QTabBar::tab:bottom:last,\n"
+"QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one {\n"
+"    margin-right: 0;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:!selected {\n"
+"    margin-right: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:right:!selected {\n"
+"    margin-left: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left, QTabBar::tab:right {\n"
+"    min-height: 8ex;\n"
+"    margin-bottom: -1px;\n"
+"    padding: 10px 5px 10px 5px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:selected {\n"
+"    border-left-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:right:selected {\n"
+"    border-right-color: blue;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:last, QTabBar::tab:right:last,\n"
+"QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {\n"
+"    margin-bottom: "
+                        "0;\n"
+"}"));
         Ajouter_Traiteur = new QWidget();
         Ajouter_Traiteur->setObjectName(QStringLiteral("Ajouter_Traiteur"));
         le_id = new QLineEdit(Ajouter_Traiteur);
         le_id->setObjectName(QStringLiteral("le_id"));
         le_id->setGeometry(QRect(100, 30, 141, 21));
+        le_id->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         le_adresse = new QLineEdit(Ajouter_Traiteur);
         le_adresse->setObjectName(QStringLiteral("le_adresse"));
         le_adresse->setGeometry(QRect(100, 110, 141, 21));
+        le_adresse->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         le_prix = new QLineEdit(Ajouter_Traiteur);
         le_prix->setObjectName(QStringLiteral("le_prix"));
         le_prix->setGeometry(QRect(100, 160, 141, 21));
+        le_prix->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         le_nom = new QLineEdit(Ajouter_Traiteur);
         le_nom->setObjectName(QStringLiteral("le_nom"));
         le_nom->setGeometry(QRect(100, 70, 141, 21));
+        le_nom->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         label = new QLabel(Ajouter_Traiteur);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 30, 61, 16));
-        label->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label->setGeometry(QRect(10, 30, 81, 20));
+        label->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_2 = new QLabel(Ajouter_Traiteur);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(0, 70, 81, 16));
-        label_2->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_2->setGeometry(QRect(0, 70, 101, 16));
+        label_2->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_3 = new QLabel(Ajouter_Traiteur);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(10, 110, 61, 16));
-        label_3->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_3->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_4 = new QLabel(Ajouter_Traiteur);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(0, 160, 91, 20));
-        label_4->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_4->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         Quitter_Ajoutsalle = new QPushButton(Ajouter_Traiteur);
         Quitter_Ajoutsalle->setObjectName(QStringLiteral("Quitter_Ajoutsalle"));
         Quitter_Ajoutsalle->setGeometry(QRect(260, 90, 71, 23));
         Quitter_Ajoutsalle->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         Ok_Ajoutsalle = new QPushButton(Ajouter_Traiteur);
         Ok_Ajoutsalle->setObjectName(QStringLiteral("Ok_Ajoutsalle"));
         Ok_Ajoutsalle->setGeometry(QRect(260, 40, 71, 23));
         Ok_Ajoutsalle->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         heart = new QFrame(Ajouter_Traiteur);
         heart->setObjectName(QStringLiteral("heart"));
@@ -243,12 +431,25 @@ public:
         pushButton_2 = new QPushButton(Affichr_Traiteur);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(660, 210, 75, 23));
-        pushButton_2->setStyleSheet(QLatin1String("color: rgb(0, 0, 0);\n"
-"font: 75 10pt \"MS Shell Dlg 2\";"));
+        pushButton_2->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
+"\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"}"));
         groupBox_2 = new QGroupBox(Affichr_Traiteur);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         groupBox_2->setGeometry(QRect(0, 0, 621, 271));
-        groupBox_2->setStyleSheet(QLatin1String("QPushButton\n"
+        groupBox_2->setStyleSheet(QLatin1String("/*QPushButton\n"
 "{\n"
 "	background: transparent;\n"
 "	border-style:solid;\n"
@@ -264,7 +465,7 @@ public:
 "{\n"
 "	background-color: #00000000;\n"
 "	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
+"	/*color:rgb(30, 227, 0);\n"
 "}\n"
 "\n"
 "QPushButton:focus\n"
@@ -272,6 +473,26 @@ public:
 "	background-color:  rgb(30, 227, 0);\n"
 "	border-color: rgba(30, 227, 0,0);\n"
 "	color:rgb(255, 255, 255);\n"
+"}*/\n"
+"QTabWidget::pane {\n"
+"    border: 1px solid black;\n"
+"    background: rgb(183, 255, 233);\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:top {\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:bottom {\n"
+"    bottom: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:left {\n"
+"    right: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:right {\n"
+"    left: 1px;\n"
 "}"));
         tab_salle = new QTableView(groupBox_2);
         tab_salle->setObjectName(QStringLiteral("tab_salle"));
@@ -279,62 +500,127 @@ public:
         lineEdit = new QLineEdit(groupBox_2);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(10, 80, 113, 20));
+        lineEdit->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         pushButton = new QPushButton(groupBox_2);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(10, 110, 81, 23));
-        pushButton->setStyleSheet(QLatin1String("color: rgb(0, 0, 0);\n"
-"font: 75 10pt \"MS Shell Dlg 2\";"));
+        pushButton->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
+"\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"}"));
         pushButton_5 = new QPushButton(groupBox_2);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(10, 140, 81, 23));
-        pushButton_5->setStyleSheet(QStringLiteral("color: rgb(9, 9, 9);"));
+        pushButton_5->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
+"\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"}"));
         comboBox = new QComboBox(groupBox_2);
         comboBox->setObjectName(QStringLiteral("comboBox"));
         comboBox->setGeometry(QRect(21, 50, 71, 22));
+        comboBox->setStyleSheet(QLatin1String("QComboBox {\n"
+"color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"border-style: solid;\n"
+"}"));
         imp_tr = new QPushButton(groupBox_2);
         imp_tr->setObjectName(QStringLiteral("imp_tr"));
         imp_tr->setGeometry(QRect(10, 200, 81, 23));
+        imp_tr->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
+"\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"}"));
         pdf_tr = new QPushButton(groupBox_2);
         pdf_tr->setObjectName(QStringLiteral("pdf_tr"));
         pdf_tr->setGeometry(QRect(10, 230, 81, 23));
+        pdf_tr->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
+"\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"}"));
         tabWidget_2->addTab(Affichr_Traiteur, QString());
         Supprimer_Traiteur = new QWidget();
         Supprimer_Traiteur->setObjectName(QStringLiteral("Supprimer_Traiteur"));
         label_5 = new QLabel(Supprimer_Traiteur);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(40, 60, 61, 16));
-        label_5->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_5->setGeometry(QRect(20, 60, 81, 20));
+        label_5->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         le_id_supp = new QLineEdit(Supprimer_Traiteur);
         le_id_supp->setObjectName(QStringLiteral("le_id_supp"));
         le_id_supp->setGeometry(QRect(110, 60, 141, 21));
+        le_id_supp->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         pb_supprimer1 = new QPushButton(Supprimer_Traiteur);
         pb_supprimer1->setObjectName(QStringLiteral("pb_supprimer1"));
         pb_supprimer1->setGeometry(QRect(270, 70, 71, 23));
         pb_supprimer1->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         tabWidget_2->addTab(Supprimer_Traiteur, QString());
         Modifier_Traiteur = new QWidget();
@@ -342,54 +628,59 @@ public:
         lineEdit_nommodifiersalle = new QLineEdit(Modifier_Traiteur);
         lineEdit_nommodifiersalle->setObjectName(QStringLiteral("lineEdit_nommodifiersalle"));
         lineEdit_nommodifiersalle->setGeometry(QRect(220, 130, 141, 21));
+        lineEdit_nommodifiersalle->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         lineEdit_adressemodifiersalle = new QLineEdit(Modifier_Traiteur);
         lineEdit_adressemodifiersalle->setObjectName(QStringLiteral("lineEdit_adressemodifiersalle"));
         lineEdit_adressemodifiersalle->setGeometry(QRect(220, 170, 141, 21));
+        lineEdit_adressemodifiersalle->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         lineEdit_prixmodifiersalle = new QLineEdit(Modifier_Traiteur);
         lineEdit_prixmodifiersalle->setObjectName(QStringLiteral("lineEdit_prixmodifiersalle"));
         lineEdit_prixmodifiersalle->setGeometry(QRect(220, 200, 141, 21));
+        lineEdit_prixmodifiersalle->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         label_8 = new QLabel(Modifier_Traiteur);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(120, 130, 81, 16));
-        label_8->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_8->setGeometry(QRect(90, 130, 101, 16));
+        label_8->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_11 = new QLabel(Modifier_Traiteur);
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setGeometry(QRect(130, 170, 61, 16));
-        label_11->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_11->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_12 = new QLabel(Modifier_Traiteur);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(150, 200, 61, 16));
-        label_12->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_12->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         Modifier_Modifiersalle = new QPushButton(Modifier_Traiteur);
         Modifier_Modifiersalle->setObjectName(QStringLiteral("Modifier_Modifiersalle"));
         Modifier_Modifiersalle->setGeometry(QRect(440, 160, 71, 23));
         Modifier_Modifiersalle->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         groupBox = new QGroupBox(Modifier_Traiteur);
         groupBox->setObjectName(QStringLiteral("groupBox"));
@@ -398,119 +689,222 @@ public:
 "font: italic 8pt \"MS Sans Serif\";"));
         label_7 = new QLabel(groupBox);
         label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(20, 30, 61, 16));
-        label_7->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_7->setGeometry(QRect(20, 30, 101, 16));
+        label_7->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         lineEdit_idmodifiersalle = new QLineEdit(groupBox);
         lineEdit_idmodifiersalle->setObjectName(QStringLiteral("lineEdit_idmodifiersalle"));
         lineEdit_idmodifiersalle->setGeometry(QRect(70, 50, 141, 21));
+        lineEdit_idmodifiersalle->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         tabWidget_2->addTab(Modifier_Traiteur, QString());
         tabWidget->addTab(Espace_Traiteur, QString());
         Espace_Cameraman = new QWidget();
         Espace_Cameraman->setObjectName(QStringLiteral("Espace_Cameraman"));
         AfficherTheme = new QTabWidget(Espace_Cameraman);
         AfficherTheme->setObjectName(QStringLiteral("AfficherTheme"));
-        AfficherTheme->setGeometry(QRect(0, 30, 751, 331));
-        AfficherTheme->setStyleSheet(QLatin1String("font: 75 italic 11pt \"Times New Roman\";\n"
-"color: rgb(160, 170, 117);"));
+        AfficherTheme->setGeometry(QRect(0, 0, 751, 331));
+        AfficherTheme->setStyleSheet(QLatin1String("QTabWidget::pane {\n"
+"    border: 1px solid black;\n"
+"    background: rgb(183, 255, 233);\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:top {\n"
+"    top: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:bottom {\n"
+"    bottom: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:left {\n"
+"    right: 1px;\n"
+"}\n"
+"\n"
+"QTabWidget::tab-bar:right {\n"
+"    left: 1px;\n"
+"}\n"
+"\n"
+"QTabBar::tab {\n"
+"    border: 1px solid black;\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"   color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"border-style: solid;\n"
+"}\n"
+"\n"
+"QTabBar::tab:!selected {\n"
+"    background: silver;\n"
+"}\n"
+"\n"
+"QTabBar::tab:!selected:hover {\n"
+"    background: #999;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:!selected {\n"
+"    margin-top: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:bottom:!selected {\n"
+"    margin-bottom: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top, QTabBar::tab:bottom {\n"
+"    min-width: 8ex;\n"
+"    margin-r"
+                        "ight: -1px;\n"
+"    padding: 5px 10px 5px 10px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:selected {\n"
+"    border-bottom-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:bottom:selected {\n"
+"    border-top-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:top:last, QTabBar::tab:bottom:last,\n"
+"QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one {\n"
+"    margin-right: 0;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:!selected {\n"
+"    margin-right: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:right:!selected {\n"
+"    margin-left: 3px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left, QTabBar::tab:right {\n"
+"    min-height: 8ex;\n"
+"    margin-bottom: -1px;\n"
+"    padding: 10px 5px 10px 5px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:selected {\n"
+"    border-left-color: none;\n"
+"}\n"
+"\n"
+"QTabBar::tab:right:selected {\n"
+"    border-right-color: blue;\n"
+"}\n"
+"\n"
+"QTabBar::tab:left:last, QTabBar::tab:right:last,\n"
+"QTabBar::tab:left:only-one, QTabBar::tab:right:only-one {\n"
+"    margin-bottom: 0;\n"
+"}"));
         Ajouter_Cameraman = new QWidget();
         Ajouter_Cameraman->setObjectName(QStringLiteral("Ajouter_Cameraman"));
         le_id_theme = new QLineEdit(Ajouter_Cameraman);
         le_id_theme->setObjectName(QStringLiteral("le_id_theme"));
         le_id_theme->setGeometry(QRect(130, 30, 141, 21));
+        le_id_theme->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         le_nom_dec = new QLineEdit(Ajouter_Cameraman);
         le_nom_dec->setObjectName(QStringLiteral("le_nom_dec"));
         le_nom_dec->setGeometry(QRect(130, 70, 141, 21));
+        le_nom_dec->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         le_nom_theme = new QLineEdit(Ajouter_Cameraman);
         le_nom_theme->setObjectName(QStringLiteral("le_nom_theme"));
         le_nom_theme->setGeometry(QRect(130, 110, 141, 21));
+        le_nom_theme->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         label_14 = new QLabel(Ajouter_Cameraman);
         label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(20, 30, 101, 20));
-        label_14->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_14->setGeometry(QRect(10, 30, 101, 20));
+        label_14->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_15 = new QLabel(Ajouter_Cameraman);
         label_15->setObjectName(QStringLiteral("label_15"));
         label_15->setGeometry(QRect(10, 70, 121, 20));
-        label_15->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_15->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_16 = new QLabel(Ajouter_Cameraman);
         label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setGeometry(QRect(20, 110, 101, 20));
-        label_16->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_16->setGeometry(QRect(10, 110, 101, 20));
+        label_16->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         le_prix_theme = new QLineEdit(Ajouter_Cameraman);
         le_prix_theme->setObjectName(QStringLiteral("le_prix_theme"));
         le_prix_theme->setGeometry(QRect(130, 180, 141, 21));
+        le_prix_theme->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         label_17 = new QLabel(Ajouter_Cameraman);
         label_17->setObjectName(QStringLiteral("label_17"));
         label_17->setGeometry(QRect(20, 180, 101, 20));
-        label_17->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_17->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         Quitter_Ajouttheme = new QPushButton(Ajouter_Cameraman);
         Quitter_Ajouttheme->setObjectName(QStringLiteral("Quitter_Ajouttheme"));
         Quitter_Ajouttheme->setGeometry(QRect(300, 120, 71, 23));
         Quitter_Ajouttheme->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         Ok_Ajouttheme = new QPushButton(Ajouter_Cameraman);
         Ok_Ajouttheme->setObjectName(QStringLiteral("Ok_Ajouttheme"));
         Ok_Ajouttheme->setGeometry(QRect(300, 90, 71, 23));
         Ok_Ajouttheme->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         le_adresse_dec = new QLineEdit(Ajouter_Cameraman);
         le_adresse_dec->setObjectName(QStringLiteral("le_adresse_dec"));
         le_adresse_dec->setGeometry(QRect(130, 150, 141, 21));
+        le_adresse_dec->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         label_18 = new QLabel(Ajouter_Cameraman);
         label_18->setObjectName(QStringLiteral("label_18"));
         label_18->setGeometry(QRect(20, 150, 101, 20));
-        label_18->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_18->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         AfficherTheme->addTab(Ajouter_Cameraman, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
@@ -525,164 +919,145 @@ public:
         lineEdit_2 = new QLineEdit(groupBox_3);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(10, 70, 113, 20));
+        lineEdit_2->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         pushButton_3 = new QPushButton(groupBox_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(10, 110, 81, 23));
         pushButton_3->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         pushButton_6 = new QPushButton(groupBox_3);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         pushButton_6->setGeometry(QRect(10, 140, 81, 23));
         pushButton_6->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         comboBox_2 = new QComboBox(groupBox_3);
         comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
         comboBox_2->setGeometry(QRect(40, 30, 62, 22));
+        comboBox_2->setStyleSheet(QLatin1String("QComboBox {\n"
+"color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"border-style: solid;\n"
+"}"));
         imp_ca = new QPushButton(groupBox_3);
         imp_ca->setObjectName(QStringLiteral("imp_ca"));
         imp_ca->setGeometry(QRect(10, 200, 75, 23));
         imp_ca->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         pdf_ca = new QPushButton(groupBox_3);
         pdf_ca->setObjectName(QStringLiteral("pdf_ca"));
         pdf_ca->setGeometry(QRect(10, 230, 75, 23));
         pdf_ca->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         pushButton_4 = new QPushButton(tab);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(650, 180, 75, 23));
-        pushButton_4->setStyleSheet(QLatin1String("color: rgb(0, 0, 0);\n"
-"font: 75 10pt \"MS Shell Dlg 2\";"));
+        pushButton_4->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
+"\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
+"}"));
         AfficherTheme->addTab(tab, QString());
         Supprimer_Cameraman = new QWidget();
         Supprimer_Cameraman->setObjectName(QStringLiteral("Supprimer_Cameraman"));
         label_24 = new QLabel(Supprimer_Cameraman);
         label_24->setObjectName(QStringLiteral("label_24"));
         label_24->setGeometry(QRect(40, 80, 101, 20));
-        label_24->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_24->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         le_supp_theme = new QLineEdit(Supprimer_Cameraman);
         le_supp_theme->setObjectName(QStringLiteral("le_supp_theme"));
         le_supp_theme->setGeometry(QRect(160, 80, 141, 21));
+        le_supp_theme->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         pb_supprimertheme = new QPushButton(Supprimer_Cameraman);
         pb_supprimertheme->setObjectName(QStringLiteral("pb_supprimertheme"));
         pb_supprimertheme->setGeometry(QRect(340, 110, 71, 23));
         pb_supprimertheme->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         AfficherTheme->addTab(Supprimer_Cameraman, QString());
         Modifier_Cameraman = new QWidget();
@@ -690,82 +1065,77 @@ public:
         label_20 = new QLabel(Modifier_Cameraman);
         label_20->setObjectName(QStringLiteral("label_20"));
         label_20->setGeometry(QRect(20, 130, 121, 20));
-        label_20->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_20->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_21 = new QLabel(Modifier_Cameraman);
         label_21->setObjectName(QStringLiteral("label_21"));
         label_21->setGeometry(QRect(20, 170, 101, 20));
-        label_21->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_21->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         label_22 = new QLabel(Modifier_Cameraman);
         label_22->setObjectName(QStringLiteral("label_22"));
         label_22->setGeometry(QRect(30, 250, 101, 20));
-        label_22->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_22->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         lineEdit_nommodifiertheme = new QLineEdit(Modifier_Cameraman);
         lineEdit_nommodifiertheme->setObjectName(QStringLiteral("lineEdit_nommodifiertheme"));
         lineEdit_nommodifiertheme->setGeometry(QRect(150, 120, 141, 31));
+        lineEdit_nommodifiertheme->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         lineEdit_nom2modifiertheme = new QLineEdit(Modifier_Cameraman);
         lineEdit_nom2modifiertheme->setObjectName(QStringLiteral("lineEdit_nom2modifiertheme"));
         lineEdit_nom2modifiertheme->setGeometry(QRect(150, 160, 141, 31));
+        lineEdit_nom2modifiertheme->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         lineEdit_prixmodifiertheme = new QLineEdit(Modifier_Cameraman);
         lineEdit_prixmodifiertheme->setObjectName(QStringLiteral("lineEdit_prixmodifiertheme"));
         lineEdit_prixmodifiertheme->setGeometry(QRect(150, 250, 141, 31));
+        lineEdit_prixmodifiertheme->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         Modifier_Modifiertheme = new QPushButton(Modifier_Cameraman);
         Modifier_Modifiertheme->setObjectName(QStringLiteral("Modifier_Modifiertheme"));
         Modifier_Modifiertheme->setGeometry(QRect(330, 130, 71, 23));
         Modifier_Modifiertheme->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         Annuler_Modifiertheme = new QPushButton(Modifier_Cameraman);
         Annuler_Modifiertheme->setObjectName(QStringLiteral("Annuler_Modifiertheme"));
         Annuler_Modifiertheme->setGeometry(QRect(330, 170, 71, 23));
         Annuler_Modifiertheme->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
-"	background: transparent;\n"
-"	border-style:solid;\n"
-"	border-radius:7px;\n"
-"	border-width:1px;\n"
-"border-color: rgb(50, 53, 57);\n"
-"	color:rgb(0,0,0);\n"
-"	font-size:16px;\n"
-"font-family:Calibri;\n"
-"}\n"
+" color: white;\n"
+"background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 gray,stop: 1 green);\n"
+"border-width: 1px;\n"
+"border-color: #339;\n"
+"	font: 12pt \"MS Shell Dlg 2\";\n"
+"border-style: solid;\n"
+"font: 11pt \"MS Shell Dlg 2\";\n"
 "\n"
-"QPushButton:hover\n"
-"{\n"
-"	background-color: #00000000;\n"
-"	border-color: rgb(30, 227, 0);\n"
-"	/*color:rgb(30, 227, 0);*/\n"
 "}\n"
-"\n"
-"QPushButton:focus\n"
+"QPushButton:pressed\n"
 "{\n"
-"	background-color:  rgb(30, 227, 0);\n"
-"	border-color: rgba(30, 227, 0,0);\n"
-"	color:rgb(255, 255, 255);\n"
+"    background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #2d2d2d, stop: 0.1 #2b2b2b, stop: 0.5 #292929, stop: 0.9 #282828, stop: 1 #252525);\n"
 "}"));
         groupBox_4 = new QGroupBox(Modifier_Cameraman);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
@@ -775,19 +1145,29 @@ public:
         label_9 = new QLabel(groupBox_4);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(20, 30, 111, 16));
-        label_9->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_9->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         lineEdit_idmodifiersalle_2 = new QLineEdit(groupBox_4);
         lineEdit_idmodifiersalle_2->setObjectName(QStringLiteral("lineEdit_idmodifiersalle_2"));
         lineEdit_idmodifiersalle_2->setGeometry(QRect(70, 50, 141, 21));
+        lineEdit_idmodifiersalle_2->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         lineEdit_prixmodifiertheme_2 = new QLineEdit(Modifier_Cameraman);
         lineEdit_prixmodifiertheme_2->setObjectName(QStringLiteral("lineEdit_prixmodifiertheme_2"));
         lineEdit_prixmodifiertheme_2->setGeometry(QRect(150, 210, 141, 31));
+        lineEdit_prixmodifiertheme_2->setStyleSheet(QLatin1String("QLineEdit {\n"
+"	font: 75 8pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid gray;\n"
+"border-radius: 70pxt;\n"
+"background: white;\n"
+"}"));
         label_23 = new QLabel(Modifier_Cameraman);
         label_23->setObjectName(QStringLiteral("label_23"));
         label_23->setGeometry(QRect(10, 210, 141, 20));
-        label_23->setStyleSheet(QLatin1String("font: 75 11pt \"MS Shell Dlg 2\";\n"
-"color: rgb(0, 0, 0);"));
+        label_23->setStyleSheet(QStringLiteral("QLabel{font: 11pt \"MS Shell Dlg 2\";}"));
         AfficherTheme->addTab(Modifier_Cameraman, QString());
         tabWidget->addTab(Espace_Cameraman, QString());
         MainWindow->setCentralWidget(centralWidget);
@@ -806,7 +1186,7 @@ public:
 
         tabWidget->setCurrentIndex(1);
         tabWidget_2->setCurrentIndex(1);
-        AfficherTheme->setCurrentIndex(1);
+        AfficherTheme->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
