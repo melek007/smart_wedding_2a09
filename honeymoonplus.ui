@@ -311,18 +311,15 @@ QLineEdit:focus { background-color:rgb(192, 192, 255);}
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QTableView QTableCornerButton::section {
-    background: red;
-    border: 2px outset red;
-}</string>
+      <string notr="true"/>
      </property>
     </widget>
     <widget class="QPushButton" name="tri_par_lieu">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>300</x>
        <y>140</y>
-       <width>71</width>
+       <width>161</width>
        <height>28</height>
       </rect>
      </property>
@@ -424,7 +421,7 @@ QPushButton
       <rect>
        <x>110</x>
        <y>140</y>
-       <width>81</width>
+       <width>161</width>
        <height>28</height>
       </rect>
      </property>
@@ -460,9 +457,9 @@ QPushButton
     <widget class="QPushButton" name="tri_par_prix">
      <property name="geometry">
       <rect>
-       <x>290</x>
+       <x>490</x>
        <y>140</y>
-       <width>81</width>
+       <width>151</width>
        <height>28</height>
       </rect>
      </property>
@@ -505,10 +502,16 @@ QPushButton
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color : none;
-border-color: rgb(170, 0, 0);
-border-width : 2px;
-border-style:solid</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="recherche_par_id">
@@ -521,10 +524,16 @@ border-style:solid</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color : none;
-border-color: rgb(170, 0, 0);
-border-width : 2px;
-border-style:solid</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_24">
@@ -550,10 +559,16 @@ border-style:solid</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color : none;
-border-color: rgb(170, 0, 0);
-border-width : 2px;
-border-style:solid</string>
+      <string notr="true">QLineEdit{ background-color:rgb(202, 255, 227);
+border: 2px solid ;
+border-radius: 10px;
+
+padding: 0 8px;
+selection-background-color: darkgray;
+font-size: 16px;}
+
+QLineEdit:focus { background-color:rgb(192, 192, 255);}
+</string>
      </property>
     </widget>
     <widget class="QPushButton" name="refresh_honeymoon">

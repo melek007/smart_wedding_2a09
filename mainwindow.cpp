@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include"voiture.h"
 #include"honeymoonplus.h"
+#include <QSerialPortInfo>
+#include <QDebug>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -9,23 +12,90 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-        animation= new QPropertyAnimation(ui->pushButton, "geometry");
-        animation->setDuration(20000);
-        animation->setLoopCount(-1);
-        animation->setStartValue(QRect(-100, 10, 371, 150));/*(QRect(-400, 10, 371, 71));*/
-        animation->setEndValue(QRect(700, 10, 371, 150));
-        animation->start();
-            animation = new QPropertyAnimation(ui->pushButton_2, "geometry");
-            animation->setDuration(20000);
-            animation->setLoopCount(-1);
-            animation->setStartValue(QRect(-100, 10, 371, 71));/*(QRect(-400, 10, 371, 71));*/
-            animation->setEndValue(QRect(700, 10, 371, 71));
-            animation->start();
+            ui->temp_lcdNumber->display("-------");
+            arduino = new QSerialPort(this);
+            serialBuffer = "";
+            parsed_data = "";
+            temperature_value = 0.0;
+
+            bool arduino_is_available = false;
+            QString arduino_uno_port_name;
+            //
+            //  For each available serial port
+            foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts()){
+                //  check if the serialport has both a product identifier and a vendor identifier
+                if(serialPortInfo.hasProductIdentifier() && serialPortInfo.hasVendorIdentifier()){
+                    //  check if the product ID and the vendor ID match those of the arduino uno
+                    if((serialPortInfo.productIdentifier() == arduino_uno_product_id)
+                            && (serialPortInfo.vendorIdentifier() == arduino_uno_vendor_id)){
+                        arduino_is_available = true; //    arduino uno is available on this port
+                        arduino_uno_port_name = serialPortInfo.portName();
+                    }
+                }
+            }
+
+            /*
+             *  Open and configure the arduino port if available
+             */
+            if(arduino_is_available){
+                qDebug() << "Found the arduino port...\n";
+                arduino->setPortName(arduino_uno_port_name);
+                arduino->open(QSerialPort::ReadOnly);
+                arduino->setBaudRate(QSerialPort::Baud9600);
+                arduino->setDataBits(QSerialPort::Data8);
+                arduino->setFlowControl(QSerialPort::NoFlowControl);
+                arduino->setParity(QSerialPort::NoParity);
+                arduino->setStopBits(QSerialPort::OneStop);
+                QObject::connect(arduino, SIGNAL(readyRead()), this, SLOT(readSerial()));
+            }else{
+                qDebug() << "Couldn't find the correct port for the arduino.\n";
+                QMessageBox::information(this, "Serial Port Error", "Couldn't open serial port to arduino.");
+            }
+}
+
+
+void MainWindow::readSerial()
+{
+    /*
+     * readyRead() doesn't guarantee that the entire message will be received all at once.
+     * The message can arrive split into parts.  Need to buffer the serial data and then parse for the temperature value.
+     *
+     */
+    QStringList buffer_split = serialBuffer.split(","); //  split the serialBuffer string, parsing with ',' as the separator
+
+    //  Check to see if there less than 3 tokens in buffer_split.
+    //  If there are at least 3 then this means there were 2 commas,
+    //  means there is a parsed temperature value as the second token (between 2 commas)
+    if(buffer_split.length() < 3){
+        // no parsed value yet so continue accumulating bytes from serial in the buffer.
+        serialData = arduino->readAll();
+        serialBuffer = serialBuffer + QString::fromStdString(serialData.toStdString());
+        serialData.clear();
+    }else{
+        // the second element of buffer_split is parsed correctly, update the temperature value on temp_lcdNumber
+        serialBuffer = "";
+        qDebug() << buffer_split << "\n";
+        parsed_data = buffer_split[1];
+        temperature_value = (9/5.0) * (parsed_data.toDouble()) + 32; // convert to fahrenheit
+        qDebug() << "Temperature: " << temperature_value << "\n";
+        parsed_data = QString::number(temperature_value, 'g', 4); // format precision of temperature_value to 4 digits or fewer
+        MainWindow::updateTemperature(parsed_data);
+    }
+
+}
+
+void MainWindow::updateTemperature(QString sensor_reading)
+{
+    //  update the value displayed on the lcdNumber
+    ui->temp_lcdNumber->display(sensor_reading);
 }
 
 
 MainWindow::~MainWindow()
 {
+    if(arduino->isOpen()){
+        arduino->close(); //    Close the serial port if it's open.
+    }
     delete ui;
 }
 

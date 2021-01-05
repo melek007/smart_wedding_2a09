@@ -64,7 +64,7 @@ QTabBar::tab:!selected {
 }</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <property name="iconSize">
     <size>
@@ -215,7 +215,7 @@ QLineEdit:focus { background-color:rgb(192, 192, 255);}</string>
       <rect>
        <x>550</x>
        <y>430</y>
-       <width>93</width>
+       <width>101</width>
        <height>28</height>
       </rect>
      </property>
@@ -321,7 +321,7 @@ QLineEdit:focus { background-color:rgb(192, 192, 255);}</string>
    </widget>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">
-     <string>afficher voiture</string>
+     <string>Afficher voiture</string>
     </attribute>
     <widget class="QTableView" name="table_voiture">
      <property name="geometry">
@@ -333,10 +333,7 @@ QLineEdit:focus { background-color:rgb(192, 192, 255);}</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QTableView QTableCornerButton::section {
-    background: red;
-    border: 2px outset red;
-}</string>
+      <string notr="true"/>
      </property>
     </widget>
     <widget class="QPushButton" name="recherche">
@@ -753,7 +750,7 @@ QPushButton
 </string>
      </property>
      <property name="text">
-      <string>modifier</string>
+      <string>Modifier</string>
      </property>
     </widget>
     <widget class="QPushButton" name="get_data_voiture_by_id">
@@ -829,7 +826,7 @@ QPushButton
 </string>
      </property>
      <property name="text">
-      <string>supprimer</string>
+      <string>Supprimer</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="edit_supp_input_matricule">
