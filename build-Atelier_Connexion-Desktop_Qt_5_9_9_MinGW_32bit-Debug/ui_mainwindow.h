@@ -49,6 +49,7 @@ public:
     QPushButton *Quitter_Ajoutsalle;
     QPushButton *Ok_Ajoutsalle;
     QFrame *heart;
+    QLabel *label_6;
     QWidget *Affichr_Traiteur;
     QPushButton *pushButton_2;
     QGroupBox *groupBox_2;
@@ -425,6 +426,9 @@ public:
         heart->setStyleSheet(QStringLiteral("image: url(:/heart.png);"));
         heart->setFrameShape(QFrame::StyledPanel);
         heart->setFrameShadow(QFrame::Raised);
+        label_6 = new QLabel(Ajouter_Traiteur);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(456, 140, 61, 20));
         tabWidget_2->addTab(Ajouter_Traiteur, QString());
         Affichr_Traiteur = new QWidget();
         Affichr_Traiteur->setObjectName(QStringLiteral("Affichr_Traiteur"));
@@ -1184,8 +1188,8 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
-        tabWidget_2->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
+        tabWidget_2->setCurrentIndex(0);
         AfficherTheme->setCurrentIndex(0);
 
 
@@ -1202,6 +1206,7 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "Prix_location :", Q_NULLPTR));
         Quitter_Ajoutsalle->setText(QApplication::translate("MainWindow", "Quitter", Q_NULLPTR));
         Ok_Ajoutsalle->setText(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
+        label_6->setText(QApplication::translate("MainWindow", "gaz", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(Ajouter_Traiteur), QApplication::translate("MainWindow", "Ajouter Traiteur", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainWindow", "Quitter", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Affichage", Q_NULLPTR));

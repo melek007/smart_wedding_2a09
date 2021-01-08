@@ -6,6 +6,11 @@
 #include "cameraman.h"
 #include <QPropertyAnimation>
 
+#include <QMainWindow>
+#include <QDialog>
+#include <QPropertyAnimation>
+#include "arduino.h"
+
 namespace Ui {
 QT_END_NAMESPACE
 class MainWindow;
@@ -52,11 +57,13 @@ private slots:
     void on_imp_ca_clicked();
 
     void on_pdf_ca_clicked();
+    void update_label();
 
 private:
     Ui::MainWindow *ui;
     traiteur t;
     cameraman c;
+    arduino ar;
     QPropertyAnimation *animation;
 };
 

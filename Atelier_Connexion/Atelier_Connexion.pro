@@ -4,9 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql printsupport network multimedia
+QT       += core gui sql printsupport network multimedia serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG +=c++11
 
 TARGET = Atelier_Connexion
 TEMPLATE = app
@@ -25,6 +26,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     cameraman.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -32,6 +34,7 @@ SOURCES += \
     traiteur.cpp
 
 HEADERS += \
+    arduino.h \
     cameraman.h \
         mainwindow.h \
     connection.h \

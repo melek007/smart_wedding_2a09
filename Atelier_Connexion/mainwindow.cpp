@@ -26,17 +26,31 @@
 #include <QPrintDialog>
 #include<QtSql/QSqlQuery>
 #include<QVariant>
-#include"arduino.h"
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
 ui->setupUi(this);
+int ret=ar.connect_arduino();
+   switch (ret) {
+   case(0): qDebug() <<"arduino is avaible and connected to:";
+
+       break;
+   case(1): qDebug() <<"arduino is avaible but not connected to:";
+       break;
+   case(-1): qDebug() <<"arduino is not avaible";
+       break;
+   }
+QObject::connect(ar.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
 }
+
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 void MainWindow::on_Ok_Ajoutsalle_clicked()
 {
     int id_tr=ui->le_id->text().toInt();
@@ -428,4 +442,34 @@ void MainWindow::on_pdf_ca_clicked()
                   doc.setHtml(strStream);
                   doc.setPageSize(printer.pageRect().size()); // This is necessary if you want to hide the page number
                   doc.print(&printer);
+}
+void MainWindow::update_label()
+{
+   QByteArray data=ar.read_from_arduino();
+    qDebug()<< data;
+
+   ui->label->setText("data : "+data);
+
+    if (data=="1")
+    {
+        int reponse = QMessageBox::question(this," DANGER!!!", " DETECTION GAZ!!!", QMessageBox::Yes);
+
+        if (reponse == QMessageBox::Yes)
+        {
+         ar.write_to_arduino("0");
+        }
+        if (reponse == QMessageBox::No)
+        {
+         ar.write_to_arduino("0");
+        }
+    }
+    if (data=="2")
+    {
+         ar.write_to_arduino("3");
+    }
+    else if(data=="4")
+    {
+        ar.write_to_arduino("5");
+    }
+
 }
