@@ -291,3 +291,14 @@ void MainWindow::on_btn_tri_nom_clicked()
     ui->tab_salle->setModel(tmpsalle.trier());
 
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    data = A.read_from_arduino();
+
+        if (data == "1")
+            ui->lineEdit->setText("ON");
+
+        else if (data =="0")
+            ui->lineEdit->setText("OFF");
+}

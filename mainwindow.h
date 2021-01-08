@@ -3,6 +3,8 @@
 #include "salle.h"
 #include <QMainWindow>
 #include "theme.h"
+#include"arduino.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -62,9 +64,13 @@ private slots:
 
     void on_btn_rate_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
      Salle tmpsalle;
      theme tmptheme;
+     Arduino A;
+     QByteArray data;
 };
 #endif // MAINWINDOW_H
